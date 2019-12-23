@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/layout_item_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_portrait"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:contentDescription="@null"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_version_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_5"
+            android:textColor="?attr/textColor"
+            android:textSize="@dimen/text_size_16" />
+
+        <View
+            style="@style/h_line"
+            android:layout_marginTop="10dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_grade"
+            style="@style/option_item_rl"
+            android:background="?attr/layout_item_bg"
+            android:padding="0dp">
+
+            <TextView
+                android:id="@+id/tv_grade"
+                style="@style/option_item_text_parent"
+                android:layout_width="match_parent"
+                android:background="@drawable/ic_material"
+                android:paddingBottom="@dimen/lay_12"
+                android:paddingLeft="@dimen/lay_16"
+                android:paddingRight="@dimen/lay_16"
+                android:paddingTop="@dimen/lay_12"
+                android:text="@string/grade"
+                android:textColor="?attr/textColor"
+                android:textSize="@dimen/text_size_16" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="50dip"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dip">
+
+        <TextView
+            android:id="@+id/tv_oscsite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:text="@string/osc_site"
+            android:textColor="?android:textColorLink" />
+
+
+        <TextView
+            android:id="@+id/tv_knowmore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/know_more"
+            android:textColor="?android:textColorLink" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="@string/copyright"
+        android:textColor="?attr/infoTextColor" />
+
+</LinearLayout>

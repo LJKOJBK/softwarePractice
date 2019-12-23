@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/lay_32"
+    android:paddingTop="@dimen/lay_32">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="DisableBaselineAlignment,UselessParent">
+
+        <LinearLayout
+            android:id="@+id/ll_share_wechat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/lay_16"
+            android:paddingTop="@dimen/lay_16"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/size_36"
+                android:layout_height="@dimen/size_36"
+                android:contentDescription="@string/share_wechat"
+                android:padding="@dimen/lay_2"
+                android:src="@mipmap/ic_login_3party_wechat" />
+
+            <TextView
+                android:id="@+id/tv_share_wx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/lay_12"
+                android:text="@string/share_wechat" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_share_moments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/lay_16"
+            android:paddingTop="@dimen/lay_16"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/size_36"
+                android:layout_height="@dimen/size_36"
+                android:contentDescription="@string/share_moments"
+                android:src="@mipmap/ic_action_moments" />
+
+            <TextView
+                android:id="@+id/tv_share_moments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/lay_12"
+                android:text="@string/share_moments" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_share_weibo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/lay_16"
+            android:paddingTop="@dimen/lay_16"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/size_36"
+                android:layout_height="@dimen/size_36"
+                android:contentDescription="@string/share_weibo"
+                android:src="@mipmap/ic_login_3party_weibo" />
+
+            <TextView
+                android:id="@+id/tv_share_sina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/lay_12"
+                android:text="@string/share_weibo" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="DisableBaselineAlignment,UselessParent">
+
+        <LinearLayout
+            android:id="@+id/ll_share_qq"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/lay_16"
+            android:paddingTop="@dimen/lay_16"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/size_36"
+                android:layout_height="@dimen/size_36"
+                android:contentDescription="@string/share_qq"
+                android:padding="@dimen/lay_2"
+                android:src="@mipmap/ic_login_3party_qq" />
+
+            <TextView
+                android:id="@+id/tv_share_qq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/lay_12"
+                android:text="@string/share_qq" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_share_browser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/lay_16"
+            android:paddingTop="@dimen/lay_16"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/size_36"
+                android:layout_height="@dimen/size_36"
+                android:contentDescription="@string/share_qzone"
+                android:src="@mipmap/ic_action_browser" />
+
+            <TextView
+                android:id="@+id/tv_share_browser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/lay_12"
+                android:text="@string/share_browser" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_share_copy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/lay_16"
+            android:paddingTop="@dimen/lay_16"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/size_36"
+                android:layout_height="@dimen/size_36"
+                android:contentDescription="@string/share_qzone"
+                android:src="@mipmap/ic_action_url" />
+
+            <TextView
+                android:id="@+id/tv_share_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/lay_12"
+                android:text="@string/share_copy" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

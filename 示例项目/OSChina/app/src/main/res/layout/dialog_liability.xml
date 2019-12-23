@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="@dimen/lay_8"
+        android:lineSpacingExtra="4dp"
+        android:text="您即将访问的是外站链接，所有外站内容与开源中国无关，且不代表开源中国观点。"
+        android:textColor="@color/text_title_color"
+        android:textSize="@dimen/font_16"
+        tools:ignore="HardcodedText" />
+
+    <CheckBox
+        android:id="@+id/cb_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/lay_8"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="@dimen/lay_8"
+        android:button="@drawable/ic_selector_checkbox"
+        android:checked="true"
+        android:paddingLeft="@dimen/lay_8"
+        android:paddingRight="@dimen/lay_8"
+        android:text="不再提示"
+        android:textColor="@color/text_title_color"
+        tools:ignore="HardcodedText" />
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lay_info"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    tools:ignore="RtlHardcoded,SmallSp">
+
+    <ImageView
+        android:id="@+id/iv_info_view"
+        android:layout_width="16dp"
+        android:layout_height="12dp"
+        android:layout_marginRight="4dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ic_view"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_info_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        android:gravity="center_vertical"
+        android:text="0"
+        android:textColor="#9d9d9d"
+        android:textSize="10sp"
+        android:visibility="gone"
+        tools:ignore="HardcodedText,SmallSp"
+        tools:text="234" />
+
+    <ImageView
+        android:id="@+id/iv_info_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginRight="4dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ic_comment" />
+
+    <TextView
+        android:id="@+id/tv_info_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="0"
+        android:textColor="#9d9d9d"
+        android:textSize="10sp"
+        tools:ignore="HardcodedText"
+        tools:text="12" />
+
+</LinearLayout>

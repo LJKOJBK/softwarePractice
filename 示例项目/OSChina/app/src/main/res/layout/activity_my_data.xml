@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:ignore="HardcodedText,RtlHardcoded">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/white"
+        android:titleTextColor="@color/black"
+        app:navigationIcon="@mipmap/btn_back_dark_pressed"
+        app:popupTheme="@style/ToolbarPopupBlackTheme"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        tools:ignore="UnusedAttribute" />
+
+    <View style="@style/h_line" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background"
+        android:orientation="vertical"
+        tools:ignore="HardcodedText,RtlHardcoded">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_background"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_marginTop="@dimen/lay_16"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal"
+                android:descendantFocusability="blocksDescendants"
+                android:paddingLeft="@dimen/lay_16"
+                android:paddingRight="@dimen/lay_16">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="头像"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/font_16" />
+
+                <net.oschina.app.improve.widget.PortraitView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:layout_gravity="center_vertical"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dip"
+                    tools:src="@mipmap/widget_default_face" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/h_line"
+                android:layout_marginLeft="@dimen/lay_16" />
+
+            <LinearLayout
+                android:id="@+id/ll_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/lay_16"
+                android:paddingRight="@dimen/lay_16">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="昵称"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="黄海彬"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_16" />
+            </LinearLayout>
+
+            <View
+                style="@style/h_line"
+                android:layout_marginLeft="@dimen/lay_16" />
+
+            <LinearLayout
+                android:id="@+id/ll_join_time"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/lay_16"
+                android:paddingRight="@dimen/lay_16">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="加入时间"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/tv_join_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="2015／08／26"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_16" />
+            </LinearLayout>
+
+            <View
+                style="@style/h_line"
+                android:layout_marginLeft="@dimen/lay_16" />
+
+            <LinearLayout
+                android:id="@+id/ll_area"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/ic_material"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/lay_16"
+                android:paddingRight="@dimen/lay_16">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="所在地区"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/tv_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="深圳"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_16" />
+            </LinearLayout>
+
+            <View
+                style="@style/h_line"
+                android:layout_marginLeft="@dimen/lay_16" />
+
+            <LinearLayout
+                android:id="@+id/ll_skill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_material"
+                android:minHeight="52dp"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/lay_16"
+                android:paddingRight="@dimen/lay_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开发平台"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/tv_skill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/lay_16"
+                    android:gravity="center_vertical|right"
+                    android:paddingBottom="@dimen/lay_16"
+                    android:paddingTop="@dimen/lay_16"
+                    android:text="Android, .NET/C#, HTML/CSS,"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_16" />
+            </LinearLayout>
+
+            <View
+                style="@style/h_line"
+                android:layout_marginLeft="@dimen/lay_16" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_material"
+                android:minHeight="52dp"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/lay_16"
+                android:paddingRight="@dimen/lay_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="专长领域"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/tv_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/lay_16"
+                    android:gravity="center_vertical|right"
+                    android:paddingBottom="@dimen/lay_16"
+                    android:paddingTop="@dimen/lay_16"
+                    android:text="手机软件开发, 人事招聘"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_16" />
+            </LinearLayout>
+
+
+            <View
+                style="@style/h_line"
+                android:layout_marginLeft="@dimen/lay_16" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_signature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_material"
+                android:minHeight="52dp"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/lay_16"
+                android:paddingRight="@dimen/lay_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="个性签名"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/tv_signature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/lay_16"
+                    android:gravity="center_vertical|left"
+                    android:paddingBottom="@dimen/lay_16"
+                    android:paddingTop="@dimen/lay_16"
+                    android:text="你说奇迹成真我会相信"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/font_16" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

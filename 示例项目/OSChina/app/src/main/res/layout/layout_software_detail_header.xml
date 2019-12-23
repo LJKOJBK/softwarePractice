@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lay_nsv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:ignore="RtlHardcoded">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_label_recommend"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_label_recommend" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/iv_software_icon"
+                android:layout_width="@dimen/size_40"
+                android:layout_height="@dimen/size_40"
+                android:contentDescription="@string/app_name"
+                android:layout_gravity="center_vertical"
+                android:src="@color/grey_300"
+                tools:contentDescription="icon" />
+
+            <TextView
+                android:id="@+id/tv_software_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/lay_12"
+                android:gravity="center_vertical"
+                android:textColor="#111111"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.04"
+                android:lineSpacingExtra="4dp"
+                tools:text="在Google IO大会中不仅仅带来了间的"
+                tools:ignore="UnusedAttribute" />
+        </LinearLayout>
+
+        <View style="@style/h_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="@dimen/lay_16">
+
+            <TextView
+                android:id="@+id/tv_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/lay_8"
+                android:layout_weight="1"
+                android:background="@drawable/btn_software_bg"
+                android:drawableLeft="@mipmap/ic_website"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/lay_12"
+                android:paddingLeft="@dimen/lay_28"
+                android:paddingRight="@dimen/lay_28"
+                android:paddingTop="@dimen/lay_12"
+                android:text="@string/soft_detail_index"
+                android:textColor="#111111"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_document"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/lay_8"
+                android:layout_weight="1"
+                android:background="@drawable/btn_software_bg"
+                android:drawableLeft="@mipmap/ic_documents"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/lay_12"
+                android:paddingLeft="@dimen/lay_28"
+                android:paddingRight="@dimen/lay_28"
+                android:paddingTop="@dimen/lay_12"
+                android:text="@string/soft_detail_doc"
+                android:textColor="#111111"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/lay_webview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/lay_12"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <net.oschina.app.improve.widget.OWebView
+                android:id="@+id/webView"
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <net.oschina.common.widget.FlowLayout
+            android:id="@+id/flowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:oscHorizontalSpace="8dp"
+            app:oscVerticalSpace="8dp"
+            android:layout_marginLeft="@dimen/lay_16"
+            android:layout_marginRight="@dimen/lay_16"
+            android:layout_marginBottom="@dimen/lay_12" />
+
+        <LinearLayout
+            android:id="@+id/ll_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/lay_8"
+            android:paddingLeft="@dimen/lay_16"
+            android:paddingRight="@dimen/lay_16"
+            android:paddingTop="@dimen/lay_16">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:minLines="1"
+                android:text="@string/soft_detail_author"
+                android:textColor="#6a6a6a"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:id="@+id/tv_software_author_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/lay_16"
+                android:maxLines="1"
+                android:minLines="1"
+                android:textColor="@color/ques_bt_text_color_light"
+                android:textSize="@dimen/font_14"
+                tools:ignore="RtlHardcoded"
+                tools:text="so_white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/lay_8"
+            android:paddingLeft="@dimen/lay_16"
+            android:paddingRight="@dimen/lay_16">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/soft_detail_license"
+                android:textColor="#6a6a6a"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:id="@+id/tv_software_protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/lay_16"
+                android:maxLines="1"
+                android:minLines="1"
+                android:textColor="#6a6a6a"
+                android:textSize="@dimen/font_14"
+                tools:ignore="RtlHardcoded"
+                tools:text="Apache" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/lay_8"
+            android:paddingLeft="@dimen/lay_16"
+            android:paddingRight="@dimen/lay_16">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/soft_detail_language"
+                android:textColor="#6a6a6a"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:id="@+id/tv_software_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/lay_16"
+                android:maxLines="1"
+                android:minLines="1"
+                android:textColor="#6a6a6a"
+                android:textSize="@dimen/font_14"
+                tools:ignore="RtlHardcoded"
+                tools:text="Java" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/lay_8"
+            android:paddingLeft="@dimen/lay_16"
+            android:paddingRight="@dimen/lay_16">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/soft_detail_platform"
+                android:textColor="#6a6a6a"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:id="@+id/tv_software_system"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/lay_16"
+                android:textColor="#6a6a6a"
+                android:textSize="@dimen/font_14"
+                tools:ignore="RtlHardcoded"
+                tools:text="Lin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/lay_16"
+            android:paddingLeft="@dimen/lay_16"
+            android:paddingRight="@dimen/lay_16">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/soft_detail_pub_time"
+                android:textColor="#6a6a6a"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:id="@+id/tv_software_record_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/lay_16"
+                android:maxLines="1"
+                android:minLines="1"
+                android:textColor="#6a6a6a"
+                android:textSize="@dimen/font_14"
+                tools:ignore="RtlHardcoded"
+                tools:text="2015-01-12" />
+        </LinearLayout>
+
+        <net.oschina.app.improve.detail.v2.CommentView
+            android:id="@+id/cv_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@color/ques_detail_bg_color" />
+
+        <View
+            android:id="@+id/line1"
+            style="@style/h_line"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f5f5f5"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:text="相关推荐"
+            android:textColor="#9d9d9d"
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:id="@+id/line2"
+            style="@style/h_line"
+            android:visibility="gone" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

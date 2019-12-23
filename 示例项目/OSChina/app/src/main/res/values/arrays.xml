@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string-array name="tweets_viewpage_arrays">
+        <item>好友动弹</item>
+        <item>推荐话题</item>
+        <item>热门动弹</item>
+        <item>最新动弹</item>
+    </string-array>
+
+    <string-array name="choose_picture">
+        <item>相册</item>
+        <item>相机</item>
+    </string-array>
+
+    <string-array name="opensourcesoftware">
+        <item>分类</item>
+        <item>推荐</item>
+        <item>最新</item>
+        <item>热门</item>
+        <item>国产</item>
+    </string-array>
+
+    <string-array name="report_reason">
+        <item>广告</item>
+        <item>色情</item>
+        <item>翻墙</item>
+        <item>非IT话题</item>
+    </string-array>
+
+    <string-array name="report">
+        <item>其它原因</item>
+        <item>广告</item>
+        <item>色情</item>
+        <item>翻墙</item>
+        <item>非IT话题</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <string-array name="events">
+        <item>近期活动</item>
+        <item>我的活动</item>
+    </string-array>
+
+    <string-array name="avatar_option">
+        <item>更换头像</item>
+        <item>查看大头像</item>
+    </string-array>
+
+    <string-array name="font_size">
+        <item>特大号字</item>
+        <item>大号字</item>
+        <item>中号字</item>
+        <item>小号字</item>
+    </string-array>
+
+    <!--created by fei 20160524-->
+    <string-array name="near_friends_action_hint">
+        <item>清除位置并退出</item>
+    </string-array>
+
+    <string-array name="topic_list">
+        <item>码云</item>
+        <item>毎日の歌</item>
+        <item>开源中国</item>
+        <item>开源中国客户端</item>
+    </string-array>
+
+</resources>

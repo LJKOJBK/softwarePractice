@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_alpha_128"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:id="@+id/tv_recommend"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/bg_article_introduce"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="推荐"
+        android:textColor="@color/main_green"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="56dp"
+        android:layout_toRightOf="@+id/tv_recommend"
+        android:orientation="vertical"
+        android:paddingBottom="12dp"
+        android:paddingLeft="28dp"
+        android:paddingRight="22dp"
+        android:background="@mipmap/bg_tip"
+        android:paddingTop="16dp"
+        tools:ignore="RtlHardcoded">
+
+        <TextView
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新功能"
+            android:textSize="@dimen/font_14" />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1．涵盖 OSC 以及其它网站精彩\n       技术文章"
+            android:textSize="@dimen/font_14" />
+
+        <TextView
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2．根据阅读习惯智能推荐"
+            android:textSize="@dimen/font_14" />
+
+        <TextView
+            android:id="@+id/tv_sure"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:background="@drawable/bg_article_tip"
+            android:layout_height="30dp"
+            android:text="朕知道了"
+            android:textSize="@dimen/font_14" />
+    </LinearLayout>
+</RelativeLayout>

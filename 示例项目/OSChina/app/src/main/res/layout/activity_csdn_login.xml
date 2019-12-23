@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:ignore="HardcodedText"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/lay_32"
+        android:layout_marginTop="@dimen/lay_52"
+        android:contentDescription="@string/login"
+        android:src="@mipmap/ic_login_3party_csdn" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/et_nickname"
+        android:lines="1"
+        android:ellipsize="end"
+        android:hint="CSDN用户名"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/lay_32"
+        android:layout_marginRight="@dimen/lay_32"
+         />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/et_pwd"
+        android:lines="1"
+        android:ellipsize="end"
+        android:hint="******"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/lay_16"
+        android:inputType="textPassword"
+        android:layout_marginLeft="@dimen/lay_32"
+        android:layout_marginRight="@dimen/lay_32"
+        android:layout_marginTop="@dimen/lay_16" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/lay_32"
+        android:layout_marginRight="@dimen/lay_32"
+        android:background="@drawable/ic_bg_btn_blue"
+        style="?android:attr/borderlessButtonStyle"
+        android:text="@string/login" />
+</LinearLayout>

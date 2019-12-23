@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFBFB"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="50dp"
+        tools:ignore="HardcodedText"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_introduce_circle" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/lay_12"
+            android:layout_marginRight="@dimen/lay_12"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全新阅读体验"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                tools:ignore="HardcodedText" />
+
+            <View
+                android:id="@+id/line"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="60dp"
+                android:layout_height="1dp"
+                android:background="@color/main_green" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="沉浸式阅读体验"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网罗圈网技术文章"
+                android:textColor="#333333"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="万千世界，一个APP足矣"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="90dp"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/ic_introduce_two_phone_left" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="150dp"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/ic_introduce_two_phone_right"
+        tools:ignore="RtlHardcoded" />
+
+
+    <Button
+        android:id="@+id/btn_introduce"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/selector_introduce"
+        android:paddingLeft="42dp"
+        android:elevation="0dp"
+        android:outlineProvider="none"
+        android:paddingRight="42dp"
+        android:textSize="16sp"
+        android:text="立即体验"
+        android:textColor="@color/main_green"
+        tools:ignore="HardcodedText,UnusedAttribute" />
+</FrameLayout>

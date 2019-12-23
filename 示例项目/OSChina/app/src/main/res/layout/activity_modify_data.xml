@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/white"
+        android:titleTextColor="@color/black"
+        app:navigationIcon="@mipmap/btn_back_dark_pressed"
+        app:popupTheme="@style/ToolbarPopupBlackTheme"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        tools:ignore="UnusedAttribute" />
+
+    <View style="@style/h_line" />
+
+    <net.oschina.app.improve.widget.BottomLineEditText
+        android:id="@+id/et_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/lay_16"
+        android:layout_marginRight="@dimen/lay_16"
+        android:layout_marginTop="@dimen/lay_16"
+        android:background="@color/white"
+        android:hint="修改资料"
+        android:paddingBottom="@dimen/lay_8"
+        android:paddingLeft="@dimen/lay_8"
+        android:paddingRight="22dp"
+        android:paddingTop="@dimen/lay_8"
+        android:textSize="@dimen/font_16"
+        app:line_height="1dp"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+</LinearLayout>

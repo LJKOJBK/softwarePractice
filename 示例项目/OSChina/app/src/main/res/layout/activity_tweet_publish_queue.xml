@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:orientation="vertical"
+    tools:context="net.oschina.app.improve.tweet.activities.TweetPublishQueueActivity"
+    tools:ignore="KeyboardInaccessibleWidget">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/actionbar_background"
+            android:paddingTop="1dp">
+
+            <ImageView
+                android:id="@+id/icon_back"
+                android:layout_width="63dp"
+                android:layout_height="63dp"
+                android:layout_marginBottom="-8dp"
+                android:layout_marginLeft="-4dp"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:src="@mipmap/btn_back_normal"
+                tools:ignore="ContentDescription,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="63dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="@dimen/lay_8"
+                android:text="『Failed』"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_18"
+                tools:ignore="HardcodedText,RtlHardcoded" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/trans"
+            android:overScrollMode="never" />
+
+    </LinearLayout>
+
+    <net.oschina.common.widget.Loading
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:gForegroundColor="@color/black" />
+</FrameLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_material"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/lay_12"
+        android:layout_marginLeft="@dimen/lay_16"
+        android:layout_marginRight="@dimen/lay_16"
+        android:layout_marginTop="@dimen/lay_12"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/software_about_hint"
+            android:src="@mipmap/ic_discover_softwares" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/lay_12"
+            android:orientation="vertical"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="huanghaibin/CalendarView"
+                android:textColor="@color/text_title_color"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/lay_8"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Android上一个优雅、万能自定义UI、支持周视图、性能高效的日历控件，支持热插拔实现的UI定制！支持标记、自定义颜色、农历等。Canvas绘制，速度快、占用内存低"
+                android:textColor="@color/text_desc_color"
+                android:textSize="@dimen/font_12" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View style="@style/h_line" />
+</LinearLayout>

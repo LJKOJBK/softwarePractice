@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">开源中国</string>
+
+    <string name="main_tab_name_news">综合</string>
+    <string name="main_tab_name_tweet">动弹</string>
+    <string name="main_tab_name_my">我的</string>
+    <string name="main_tab_name_explore">发现</string>
+
+    <string name="event_status_end">活动结束</string>
+    <string name="event_status_ing">正在报名</string>
+    <string name="event_status_sing_up">截止报名</string>
+    <string name="event_type_osc">源创会</string>
+    <string name="event_type_tec">技术交流</string>
+    <string name="event_type_other">其他</string>
+    <string name="event_type_outside">站外活动</string>
+    <string name="event_type_outline">线下活动</string>
+
+    <string name="event_apply_status_un_sign">我要报名</string>
+    <string name="event_apply_status_audit">审核中</string>
+    <string name="event_sign_info">我的报名信息</string>
+    <string name="event_apply_status_confirmed">已确认</string>
+    <string name="event_apply_status_presented">查看活动出席人</string>
+    <string name="event_apply_status_canceled">已取消</string>
+    <string name="event_apply_status_refused">已拒绝</string>
+    <string name="event_is_fav">已收藏</string>
+    <string name="event_un_fav">收藏</string>
+
+    <!-- slide menu -->
+
+    <!-- quick option -->
+
+    <string name="loading">加载中…</string>
+    <string name="loading_no_more">已加载全部</string>
+
+    <!-- Error View -->
+    <string name="error_view_no_data">暂无内容</string>
+    <string name="error_view_loading">加载中…</string>
+    <string name="error_view_loading_friend">数据初始化中…</string>
+    <string name="error_view_loading_local_friend">获取附近的程序员中…</string>
+    <string name="error_view_load_error_click_to_refresh">内容加载失败\r\n点击重新加载</string>
+    <string name="error_view_network_error_click_to_refresh">没有可用的网络</string>
+    <string name="tip_network_error">没有可用的网络</string>
+
+    <string name="unlogin_tip">您还未登录\r\n或网络延迟</string>
+
+    <string name="login">登录</string>
+    <string name="tip_no_internet">当前没有可用的网络链接</string>
+
+    <string name="actionbar_title_question">帖子详情</string>
+    <string name="actionbar_title_detail">详情</string>
+
+    <string name="share_to">分享</string>
+    <string name="platform_sina">微博</string>
+    <string name="platform_wechat_circle">朋友圈</string>
+    <string name="platform_wechat">微信</string>
+    <string name="platform_qq">QQ</string>
+    <string name="platform_tweet">动弹</string>
+    <string name="platform_browser">浏览器</string>
+    <string name="platform_copy_link">复制链接</string>
+    <string name="platform_picture">长图分享</string>
+    <string name="platform_more_option">更多</string>
+    <string name="platform_download">保存图片</string>
+    <string name="platform_preview">预览</string>
+    <string name="share_title">开源中国分享</string>
+    <string name="commit">提交修改</string>
+
+    <string name="add_favorite_success">收藏成功</string>
+    <string name="add_favorite_faile">收藏失败</string>
+    <string name="del_favorite_success">已取消收藏</string>
+    <string name="del_favorite_faile">取消收藏失败</string>
+
+    <string name="actionbar_title_question_tag">%s相关</string>
+    <string name="comment_empty">暂无评论</string>
+    <string name="comment_reply_count">---共有%s条回复---</string>
+    <string name="tip_comment_content_empty">评论内容不能为空</string>
+
+    <!-- notification messages -->
+    <string name="comment_publish_faile">评论失败</string>
+
+    <string name="progress_submit">正在提交…</string>
+
+    <string name="tweet_public">发布动弹</string>
+    <string name="tweet_hint">今天你动弹了吗？</string>
+
+    <string name="tweet_publish_title">发布动弹</string>
+    <string name="tweet_publishing">正在发布动弹…</string>
+    <string name="tweet_ignore_hint">该条动弹已被忽略</string>
+    <string name="tweet_publish_failed_hint">动弹发布失败,请重试!!!</string>
+    <string name="tweet_retry_publishing_hint">正在重新发布动弹中…</string>
+    <string name="tweet_publishing_toast">正在发布动弹, 请留意通知栏。</string>
+    <string name="tweet_publish_success">动弹发布成功~</string>
+    <string name="tweet_publish_failed">动弹发布失败, 点击重新发送!</string>
+    <string name="tweet_image_wait">准备图片中…</string>
+    <string name="tweet_image_wait_failed">图片转存失败!</string>
+    <string name="tweet_image_publishing" formatted="false">发布图片中…%s</string>
+    <string name="tweet_image_publish_failed" formatted="false">发布图片失败-[%s/%s]</string>
+
+    <string name="tweet_detail_data_null">啊噢, 没有找到该动弹~ 可能被主人删除了呢!</string>
+    <string name="record_sound_not_found">找不到录音</string>
+
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="tip_content_empty">内容不能为空</string>
+    <string name="tip_content_too_long">内容太长</string>
+
+    <string name="zb">开源众包</string>
+    <string name="git">码云推荐</string>
+    <string name="gits">代码片段</string>
+    <string name="actionbar_title_software_list">开源软件</string>
+    <string name="actionbar_title_user_blog">用户博客列表</string>
+    <string name="actionbar_title_my_information">我的资料</string>
+    <string name="actionbar_title_setting">设置</string>
+    <string name="actionbar_title_about_osc">关于开源中国</string>
+    <string name="actionbar_title_note">便签</string>
+    <string name="actionbar_title_note_edit">编辑便签</string>
+    <!-- 找人不显示标题 -->
+    <string name="actionbar_title_event">我的活动</string>
+    <string name="actionbar_title_tags">关注标签</string>
+    <string name="actionbar_title_my_event">我的活动</string>
+    <string name="actionbar_title_event_apply">活动出席人员</string>
+    <string name="actionbar_title_same_city">同城</string>
+
+    <!-- 博客区 -->
+
+    <string name="favorite">收藏</string>
+    <string name="following">关注</string>
+    <string name="follow_done">已关注</string>
+    <string name="follower">粉丝</string>
+    <string name="join_time">加入于 :</string>
+    <string name="location">所在地区:</string>
+    <string name="development_platform">开发平台:</string>
+    <string name="academic_focus">专长领域:</string>
+
+    <string name="from_mobile">手机</string>
+    <string name="from_android">Android</string>
+    <string name="from_iphone">iPhone</string>
+    <string name="from_windows_phone">Windows Phone</string>
+    <string name="from_wechat">微信</string>
+
+    <string name="qr_scan_tips">将二维码/条码放入框内，即可自动扫描</string>
+    <string name="actionbar_title_qr_scan">二维码/条码</string>
+
+    <string name="send_message_to">发送私信给:</string>
+    <string name="send_to">发给</string>
+    <string name="message_count">%s条私信</string>
+
+    <string name="enter">确定</string>
+    <string name="copy">复制</string>
+    <string name="delete">删除</string>
+    <string name="delete_all">删除所有</string>
+    <string name="transmit">转发</string>
+    <string name="copy_success">复制成功</string>
+    <string name="deleting">正在删除…</string>
+    <string name="delete_success">删除成功</string>
+    <string name="delete_failed">删除失败</string>
+
+    <!-- software detail -->
+
+    <string name="soft_detail_doc">软件文档</string>
+    <string name="soft_detail_index">软件官网</string>
+    <string name="soft_detail_author">软件作者:</string>
+    <string name="soft_detail_license">开源协议:</string>
+    <string name="soft_detail_language">开发语言:</string>
+    <string name="soft_detail_platform">操作系统:</string>
+    <string name="soft_detail_pub_time">收录时间:</string>
+    <string name="soft_detail_any_name">匿名</string>
+    <string name="soft_detail_no_license">无</string>
+
+    <string name="footer_type_loading">正在加载中…</string>
+    <string name="footer_type_error">加载失败</string>
+    <string name="footer_type_net_error">网络错误</string>
+    <string name="footer_type_not_more">没有更多数据</string>
+    <string name="software_about_hint">相关软件</string>
+
+    <string name="you_have_unread_messages">你有%s条未读消息</string>
+    <string name="mention_count">\@我[%s] </string>
+    <string name="letter_count">私信[%s] </string>
+    <string name="review_count">评论[%s] </string>
+    <string name="fans_count">新粉丝[%s] </string>
+    <string name="like_count">收到赞[%s] </string>
+
+    <string name="blog">我的博客</string>
+    <string name="message">我的消息</string>
+    <string name="data">我的资料</string>
+    <string name="read">阅读记录</string>
+    <string name="team">我的团队</string>
+    <string name="user_score">积分</string>
+    <string name="question">我的问答</string>
+
+    <string name="scan">扫一扫</string>
+    <string name="shake">摇一摇</string>
+
+    <string name="add_notebook">新建便签</string>
+    <string name="submit_notebook">保存便签</string>
+
+    <!--设置中心-->
+    <string name="loading_img">加载图片</string>
+    <string name="clean_cache">清理缓存</string>
+    <string name="double_click_exit">双击退出</string>
+    <string name="loading_more">自动加载\"更多\"</string>
+    <string name="update">检查更新</string>
+    <string name="about" translatable="false">关于我们</string>
+    <string name="feedback">意见反馈</string>
+    <string name="setting_cancel">注销</string>
+    <string name="logout_success_hint">注销成功</string>
+    <string name="grade">去评分</string>
+
+    <string name="osc_site">官网</string>
+    <string name="know_more">了解更多</string>
+    <string name="git_app">Git客户端</string>
+    <string name="copyright">© 2017 OSChina.net All rights reserved.</string>
+
+    <string name="tip_save_image_suc">图片已保存(手机相册-> osc_img)</string>
+
+    <string name="qr_code_tip">扫一扫上面的二维码，加我为好友</string>
+    <string name="qr_code_tip2">(长按保存到本地)</string>
+
+    <string name="report">举报</string>
+    <string name="report_link">链接地址</string>
+    <string name="report_reason">举报原因</string>
+    <string name="hint_report_desc">其他原因</string>
+    <string name="tip_report_success">举报成功</string>
+    <string name="tip_report_failed">举报失败</string>
+
+    <string name="tip_double_click_exit">再次点击退出开源中国</string>
+
+
+    <string name="team_dynamic">团队动态</string>
+    <string name="actionbar_dynamic_detail">动态内容</string>
+
+    <!-- 反馈 -->
+
+    <string name="str_team_user_info">用户主页</string>
+
+    <string name="str_team_my_issue">我的任务</string>
+
+    <!-- 选择好友 -->
+    <string name="actionbar_title_select_friends">选择&#064;好友</string>
+    <string name="select_friends_search">搜索</string>
+    <string name="select_friends_no_result">无结果</string>
+    <string name="select_friends_empty">暂无好友</string>
+    <string name="select_friends_max_tips">最多只能选%1$d个好友哦</string>
+    <string name="str_request_camera_message">请求获取相机权限</string>
+    <string name="permissions_camera_error">相机无法完成初始化,请正确授权。</string>
+
+    <string name="state_network_error">网络错误</string>
+    <string name="state_loading">正在加载…</string>
+    <string name="state_not_more">没有更多数据</string>
+    <string name="state_load_error">加载失败</string>
+    <string name="state_refreshing">正在刷新</string>
+    <string name="state_load">正在加载…</string>
+    <string name="state_loading_error">数据加载中&#8230;</string>
+    <string name="state_submit">正在提交中&#8230;</string>
+
+    <string name="label_about_title">相关文章</string>
+
+    <string name="vote_up">顶</string>
+    <string name="vote_down">踩</string>
+
+    <string name="gallery_save_file_not_have_external_storage_permission">没有外部存储权限!</string>
+    <string name="gallery_save_file_not_have_external_storage">没有外部存储!</string>
+    <string name="gallery_save_file_success">保存成功!</string>
+    <string name="gallery_save_file_failed">存储失败!</string>
+    <string name="image_select_opt_done">完成</string>
+    <string name="image_select_opt_preview">预览</string>
+
+    <!-- 个人信息-->
+    <string name="action_select">选择操作</string>
+    <string name="title_icon_null">图像不存在，上传失败</string>
+    <string name="title_update_fail_status">个人信息更新失败&#8230;</string>
+
+    <!--新版登录专用-->
+    <string name="login_input_username_hint">手机号或邮箱</string>
+    <string name="login_input_username_hint_error">请输入正确的手机号或邮箱&#8230;</string>
+    <string name="login_hold_hint">记住密码</string>
+    <string name="login_forget_hint">忘记密码？</string>
+    <string name="login_register_hint">注册</string>
+    <string name="login_other_hint">其他方式登录</string>
+    <string name="register_input_username_hint">手机号</string>
+    <string name="register_username_hint">用户名</string>
+    <string name="register_sms_auth_code">短信验证码</string>
+    <string name="register_sms_hint">获取验证码</string>
+    <string name="register_sms_wait_hint">别激动,休息一下呗&#8230;</string>
+    <string name="loading_image">正在准备图片...</string>
+    <string name="register_done_hint">完成</string>
+    <string name="register_man_hint">男士</string>
+    <string name="register_female_hint">女士</string>
+    <string name="retrieve_pwd_step_hint">下一步</string>
+    <string name="retrieve_pwd_email_label_one">邮箱用户找回密码，请</string>
+    <string name="retrieve_pwd_email_label"><a>点击这里</a></string>
+    <string name="reset_pwd_hint">请输入至少六位新密码</string>
+    <string name="register_username_error">用户名太长&#8230;</string>
+    <string name="hint_password">密码</string>
+    <string name="register_pwd_hint">请输入至少六位数密码</string>
+    <string name="hint_username_ok">请输入正确的手机号码</string>
+    <string name="user_hint_login">点击头像登录</string>
+    <string name="reset_pwd_label">重置密码</string>
+    <string name="retrieve_pwd_label">找回密码</string>
+    <string name="reset_pwd_submit">确认</string>
+    <string name="request_error_hint">网络请求失败,请重试&#8230;</string>
+    <string name="login_success_hint">登录成功</string>
+    <string name="send_sms_code_success_hint">已成功发送验证码</string>
+    <string name="reset_success_hint">密码重置成功</string>
+    <string name="register_success_hint">注册成功</string>
+    <string name="share_hint">抱歉,您未安装该应用,不能分享&#8230;</string>
+    <string name="login_hint">抱歉,您未安装该应用,不能登录&#8230;</string>
+    <string name="login_wechat_hint">正在启动微信中&#8230;</string>
+    <string name="login_tencent_hint">正在启动QQ中&#8230;</string>
+    <string name="login_weibo_hint">正在启动微博中&#8230;</string>
+    <string name="message_pwd_error">密码错误</string>
+    <string name="message_username_null">用户名未填写！！！</string>
+    <string name="tv_my_score">积分 0</string>
+    <string name="zero">0</string>
+
+    <!--新版评论专用-->
+    <string name="about_comment_hint">相关评论</string>
+    <string name="view_more_hint">更多评论</string>
+    <string name="send_tweet">转发到动弹</string>
+    <string name="send_hint">发送</string>
+    <string name="comment_hint">请输入评论</string>
+    <string name="hot_comment_hint">热门评论</string>
+    <string name="pub_comment_hint">发表评论</string>
+    <string name="pub_comment_success">评论成功</string>
+    <string name="pub_comment_failed">评论失败</string>
+    <string name="add_comment_hint">添加评论</string>
+    <string name="comment_title_hint">评论</string>
+    <string name="item_hint">条</string>
+    <string name="floor_hint">楼</string>
+    <string name="reply_hint">回复:</string>
+    <string name="answer_hint">回答</string>
+    <string name="pub_about">发布于</string>
+    <string name="back_hint">返回</string>
+    <string name="martian_hint">火星网友</string>
+
+    <!--新版活动签到-->
+    <string name="signin_phone_hint">使用手机号签到</string>
+    <string name="signin_input_hint">请输入手机号码</string>
+    <string name="signin_bt_hint">立即签到</string>
+    <string name="signin_event_type_hint">类型</string>
+    <string name="signin_event_author">发起人:</string>
+    <string name="signin_event_counts_hint">人参与</string>
+    <string name="user_event_hint">我的活动</string>
+    <string name="event_null_hint">未找到该活动&#8230;</string>
+
+    <string name="topic_list">话题列表</string>
+    <string name="title_updating_user_avatar">正在上传头像…</string>
+    <string name="search_man">找人</string>
+
+    <string name="search_error">搜索失败</string>
+    <string name="search_keyword_empty_error">搜索关键字不能为空</string>
+
+    <!--@联系人／好友-->
+    <string name="add_relation_success">关注成功</string>
+    <string name="cancel_relation_success">取消关注成功</string>
+    <string name="search_net_label">在网络上搜索</string>
+    <string name="search_null_hint">搜索内容不能为空!!!</string>
+    <string name="search_error_hint">数据加载失败,请重试…</string>
+    <string name="search_load_more_hint">点击加载更多数据…</string>
+    <string name="local_search_label">本地搜索结果</string>
+    <string name="net_search_label">网络搜索结果</string>
+    <string name="check_count_hint">只能选10位好友哦!!!</string>
+    <string name="friend_list_hint">好友列表</string>
+    <string name="no_friend_hint">你没有任何好友!!!</string>
+
+    <string name="btn_ok">确定</string>
+    <string name="btn_cancel">取消</string>
+    <string name="hint_enter_tag">输入讨论话题/软件名</string>
+    <string name="program_error_hint">程序错误</string>
+    <string name="feature_suggestions_hint">功能建议</string>
+    <string name="feedback_hint">我们将不断改进</string>
+    <string name="screenshot_hint">截图描述：（可选）</string>
+    <string name="submit_feedback_hint">提交反馈</string>
+    <string name="offline_event_hint">线下活动</string>
+
+    <!--附近的人-->
+    <string name="near_bodies_hint">附近的程序员</string>
+    <string name="clear_near_bodies_hint">清除位置并退出</string>
+    <string name="nobody_hint">附近没有更多的程序员…</string>
+    <string name="near_body_gps_error_hint">当前手机定位功能无法使用!!!</string>
+    <string name="need_lbs_permission_hint">需要定位权限</string>
+    <string name="clear_bodies_failed_hint">清除位置信息失败</string>
+    <string name="upload_lbs_info_hint">上传位置信息失败</string>
+    <string name="network_timeout_hint">网络请求超时…</string>
+    <string name="location_get_failed_hint">无法获取位置信息</string>
+    <string name="no_permission_hint">现在去「设置」打开定位服务并允许开源中国获取位置信息吗?</string>
+    <string name="no_location_hint">无法定位</string>
+    <string name="server_no_have_permission_hint">服务器定位失败，请检查权限</string>
+    <string name="network_exception_hint">网络异常</string>
+    <string name="key_is_invalid_hint">非法或无效的APP KEY</string>
+
+    <string name="notification_ignore_hint">忽略</string>
+    <string name="notification_retry_hint">重试</string>
+    <string name="content_upload_error_hint">部分内容没有上传成功</string>
+    <string name="event_sign_in_error">签到失败</string>
+    <string name="event_sign_in_success">签到成功</string>
+
+    <!--git版本-->
+    <string name="get_project_detail_success">获取成功</string>
+    <string name="get_code_failure">获取代码失败</string>
+
+    <string name="identity_officialMember">官方人员</string>
+
+    <string name="blog_empty_error">博客不能为空</string>
+    <string name="blog_title_empty_error">博客标题不能为空</string>
+    <string name="blog_summary_empty_error">博客摘要不能为空</string>
+    <string name="blog_content_empty_error">博客内容不能为空</string>
+    <string name="pub_blog_failure">发布失败</string>
+    <string name="pub_blog_success">发布成功</string>
+
+    <string-array name="synthesize_titles">
+        <item>英文</item>
+        <item>推荐</item>
+        <item>资讯</item>
+        <item>问答</item>
+        <item>博客</item>
+    </string-array>
+
+
+    <string-array name="tweet_titles">
+        <item>最新动弹</item>
+        <item>热门动弹</item>
+        <item>每日乱弹</item>
+        <item>我的动弹</item>
+    </string-array>
+
+    <string name="share_wechat">微信</string>
+    <string name="share_moments">朋友圈</string>
+    <string name="share_weibo">微博</string>
+    <string name="share_qq">QQ</string>
+    <string name="share_qzone">Qzone</string>
+    <string name="share_browser">浏览器</string>
+    <string name="share_copy">复制链接</string>
+    <string name="share_save">保存相册</string>
+
+
+    <string name="pub_article_success">分享文章已成功提交，请等候审核</string>
+    <string name="pub_article_failed">投递失败</string>
+</resources>

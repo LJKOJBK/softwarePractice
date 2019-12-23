@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:ignore="RtlHardcoded">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/lay_16"
+        tools:ignore="RtlSymmetry">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:maxLines="1"
+            android:text="每日一博"
+            android:textColor="@color/text_title_color"
+            android:textSize="@dimen/font_16"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/bg_material"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/lay_16"
+            android:paddingRight="@dimen/lay_16"
+            android:text="全部"
+            android:textColor="@color/text_title_color"
+            android:textSize="@dimen/font_16"
+            tools:ignore="HardcodedText" />
+    </FrameLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

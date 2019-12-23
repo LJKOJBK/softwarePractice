@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="net.oschina.app.improve.comment.CommentsActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:titleTextColor="@color/black"
+        app:navigationIcon="@mipmap/btn_back_dark_pressed"
+        app:popupTheme="@style/ToolbarPopupBlackTheme"
+        tools:ignore="UnusedAttribute" />
+
+    <View style="@style/h_line" />
+
+    <LinearLayout
+        android:id="@+id/activity_comments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <net.oschina.app.improve.widget.CommentShareView
+                android:id="@+id/shareView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <net.oschina.app.improve.widget.RecyclerRefreshLayout
+                android:id="@+id/lay_refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFF"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/lay_blog_detail_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="RtlSymmetry" />
+            </net.oschina.app.improve.widget.RecyclerRefreshLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

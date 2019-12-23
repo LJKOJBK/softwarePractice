@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/et_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:hint="无博客标题"
+        android:maxLength="50"
+        android:textColor="@color/text_title_color"
+        android:paddingBottom="@dimen/lay_12"
+        android:paddingTop="@dimen/lay_12"
+        tools:ignore="HardcodedText" />
+
+    <View style="@style/h_line" />
+
+    <!--<android.support.v7.widget.AppCompatEditText-->
+    <!--android:id="@+id/et_summary"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/transparent"-->
+    <!--android:textColor="@color/text_desc_color"-->
+    <!--android:hint="无摘要"-->
+    <!--android:maxLength="130"-->
+    <!--android:paddingBottom="@dimen/lay_4"-->
+    <!--android:paddingTop="@dimen/lay_12"-->
+    <!--android:textSize="@dimen/font_14"-->
+    <!--tools:ignore="HardcodedText" />-->
+</LinearLayout>

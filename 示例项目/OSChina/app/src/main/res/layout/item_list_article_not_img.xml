@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_material"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/lay_12"
+    tools:ignore="RtlHardcoded,SmallSp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/lay_16"
+        android:paddingRight="@dimen/lay_16">
+
+        <ImageView
+            android:id="@+id/iv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/tag_gitee" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:letterSpacing="0.04"
+            android:lineSpacingExtra="4dp"
+            android:text="          Java JNI实现原理初探Java JNI实现原理初探"
+            android:textColor="@color/text_title_color"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,UnusedAttribute" />
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="2dp"
+        android:maxLines="2"
+        android:paddingLeft="@dimen/lay_16"
+        android:paddingRight="@dimen/lay_16"
+        android:textColor="@color/text_desc_color"
+        android:textSize="12sp"
+
+        tools:text="New Text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="@dimen/lay_16"
+        tools:ignore="HardcodedText,RtlHardcoded"
+        android:paddingRight="@dimen/lay_16">
+
+        <TextView
+            android:id="@+id/tv_origin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/lay_4"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/text_secondary_color"
+            android:textSize="10sp"
+            android:text="csdn" />
+
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/lay_8"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/text_secondary_color"
+            android:textSize="10sp"
+            android:visibility="gone"
+            android:text="黄海彬" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:lines="1"
+            android:textColor="@color/text_secondary_color"
+            android:textSize="10sp"
+            android:text="2012-12-01 22:10" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_info_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_comment" />
+
+            <TextView
+                android:id="@+id/tv_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="0"
+                android:textColor="#9d9d9d"
+                android:textSize="10sp"
+                tools:ignore="HardcodedText"
+                tools:text="12" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        style="@style/h_line"
+        android:layout_marginLeft="@dimen/lay_16"
+        android:layout_marginTop="@dimen/lay_12"
+        tools:ignore="RtlHardcoded" />
+</LinearLayout>

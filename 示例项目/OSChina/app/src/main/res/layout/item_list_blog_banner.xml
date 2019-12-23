@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="@dimen/lay_16"
+    android:background="@drawable/bg_header"
+    android:orientation="vertical"
+    tools:ignore="RtlHardcoded">
+
+    <ImageView
+        android:id="@+id/iv_banner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/app_name"
+        android:layout_margin="1dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/lay_8"
+        android:layout_marginTop="@dimen/lay_8"
+        android:ellipsize="end"
+        android:lines="2"
+        android:paddingLeft="@dimen/lay_8"
+        android:paddingRight="@dimen/lay_8"
+        android:text="chenzanjinjava集合框架（三）：LinkedHashMap"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

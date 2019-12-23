@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lay_nsv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:ignore="RtlHardcoded">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.04"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/ic_material"
+            android:gravity="center|left"
+            android:lineSpacingExtra="4dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="12dp"
+            android:textColor="@color/text_title_color"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:text="HDFS用于存储，请问它与FTP或者市面流行的存储系统的优缺点？"
+            tools:ignore="RtlHardcoded,UnusedAttribute" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp">
+
+            <net.oschina.app.improve.widget.PortraitView
+                android:id="@+id/iv_avatar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@mipmap/widget_default_face" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:textColor="#111111"
+                        android:textSize="14sp"
+                        tools:text="年轻的小蜜蜂" />
+
+                    <net.oschina.app.improve.widget.IdentityView
+                        android:id="@+id/identityView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/lay_4"
+                        tools:ignore="RtlHardcoded" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_origin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开源中国"
+                        android:textColor="#6a6a6a"
+                        android:textSize="10sp"
+                        android:visibility="visible"
+                        tools:ignore="HardcodedText,SmallSp"
+                        tools:text="开源中国" />
+
+                    <TextView
+                        android:id="@+id/tv_pub_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2016-06-24"
+                        android:textColor="#6a6a6a"
+                        android:textSize="10sp"
+                        android:layout_marginLeft="@dimen/lay_8"
+                        android:layout_marginRight="@dimen/lay_8"
+                        tools:ignore="HardcodedText,SmallSp"
+                        tools:text="2016-06-24" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_relation"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_relation"
+                android:minWidth="48dp"
+                android:textColor="@color/main_green"
+                android:textSize="12sp"
+                tools:text="关注" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/lay_webview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/lay_8"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <net.oschina.app.improve.widget.OWebView
+                android:id="@+id/webView"
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <net.oschina.common.widget.FlowLayout
+            android:id="@+id/flowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:oscHorizontalSpace="8dp"
+            app:oscVerticalSpace="8dp"
+            android:layout_marginLeft="@dimen/lay_16"
+            android:layout_marginRight="@dimen/lay_16"
+            android:layout_marginBottom="@dimen/lay_12" />
+
+        <View
+            style="@style/h_line"
+            android:visibility="visible" />
+
+        <net.oschina.app.improve.detail.v2.CommentView
+            android:id="@+id/cv_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@color/ques_detail_bg_color" />
+
+
+        <View
+            android:id="@+id/line1"
+            style="@style/h_line"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f5f5f5"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:text="相关推荐"
+            android:textColor="#9d9d9d"
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:id="@+id/line2"
+            style="@style/h_line"
+            android:visibility="gone" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

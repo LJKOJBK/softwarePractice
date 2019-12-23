@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="80dp"
+    android:layout_height="40dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="推荐"
+        android:textColor="#6A6A6A"
+        android:textSize="16sp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@drawable/bg_tab_count"
+        android:paddingLeft="@dimen/lay_4"
+        android:paddingRight="@dimen/lay_4"
+        android:text="13"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:visibility="gone"
+        tools:ignore="HardcodedText,RtlHardcoded,SmallSp" />
+</FrameLayout>

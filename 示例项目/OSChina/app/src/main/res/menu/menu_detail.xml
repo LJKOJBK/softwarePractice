@@ -1,0 +1,12 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_share"
+        android:icon="@mipmap/ic_share_black_pressed"
+        android:title="@string/share_to"
+        android:visible="true"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+</menu>

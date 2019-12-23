@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText,RtlHardcoded">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:titleTextColor="@color/black"
+        app:navigationIcon="@mipmap/btn_back_dark_pressed"
+        app:popupTheme="@style/ToolbarPopupBlackTheme"
+        tools:ignore="UnusedAttribute" />
+
+    <View style="@style/h_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/lay_16"
+            android:paddingRight="@dimen/lay_16">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="原始链接"
+                android:textColor="#111111"
+                android:textSize="16sp"
+                tools:ignore="RtlHardcoded" />
+
+            <EditText
+                android:id="@+id/et_url"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:gravity="center_vertical"
+                android:hint="http://****"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:lines="1"
+                android:inputType="textUri"
+                android:paddingLeft="@dimen/lay_16"
+                android:textColor="#6a6a6a"
+                android:textSize="@dimen/font_16"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+
+        <View
+            style="@style/h_line"
+            android:layout_marginLeft="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/lay_16"
+            android:paddingRight="@dimen/lay_16">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="文章标题"
+                android:textColor="#111111"
+                android:textSize="16sp"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="292dp"
+                android:layout_height="50dp"
+                android:background="@color/transparent"
+                android:gravity="center_vertical"
+                android:hint="投递标题"
+                android:lines="1"
+                android:ellipsize="end"
+                android:paddingLeft="@dimen/lay_16"
+                android:textColor="#6a6a6a"
+                android:textSize="@dimen/font_16"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_commit"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="@dimen/lay_16"
+            android:layout_marginRight="@dimen/lay_16"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/selector_event_sign_up"
+            android:text="投递文章"
+            android:elevation="0dp"
+            android:outlineProvider="none"
+            android:textColor="@color/white"
+            tools:ignore="UnusedAttribute" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/lay_16"
+            android:layout_marginRight="@dimen/lay_16"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="分享提示："
+            android:textColor="#9b9b9b"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/lay_16"
+            android:layout_marginRight="@dimen/lay_16"
+            android:layout_marginTop="20dp"
+            android:text="1. 将要投递文章的 URL 粘贴至“原始链接”输入框内"
+            android:textColor="#9b9b9b"
+            android:textSize="14sp"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/lay_16"
+            android:layout_marginRight="@dimen/lay_16"
+            android:layout_marginTop="4dp"
+            android:text="2. APP 将尝试获取文章的标题，您也可以手动填写标题"
+            android:textColor="#9b9b9b"
+            android:textSize="14sp"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/lay_16"
+            android:layout_marginRight="@dimen/lay_16"
+            android:layout_marginTop="4dp"
+            android:text="3. 提交的文章需要审核，请保证文章信息真实有效，我们会在一个工作日内审核完成。"
+            android:textColor="#9b9b9b"
+            android:textSize="14sp"
+            tools:ignore="RtlHardcoded" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/lay_16"
+            android:layout_marginRight="@dimen/lay_16"
+            android:layout_marginTop="16dp"
+            android:text="进入 “我的” > “设置”，关闭“自动检测粘贴板中的URL”开关可以取消分享提醒。"
+            android:textColor="#9b9b9b"
+            android:textSize="14sp"
+            tools:ignore="RtlHardcoded" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_web"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

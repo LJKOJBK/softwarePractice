@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:ignore="HardcodedText">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:titleTextColor="@color/black"
+        app:navigationIcon="@mipmap/btn_back_dark_pressed"
+        app:popupTheme="@style/ToolbarPopupBlackTheme"
+        tools:ignore="UnusedAttribute" />
+
+    <View style="@style/h_line" />
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/lay_20"
+        android:layout_marginTop="@dimen/lay_20"
+        android:gravity="center"
+        android:text="恭喜，您已报名成功并收到邀请函！"
+        android:textColor="#111111"
+        android:textSize="@dimen/font_16" />
+
+    <ImageView
+        android:id="@+id/iv_invitation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/lay_52"
+        android:layout_marginLeft="@dimen/lay_40"
+        android:layout_marginRight="@dimen/lay_40"
+        android:layout_weight="1"
+        android:contentDescription="@string/signin_event_counts_hint" />
+
+    <Button
+        android:id="@+id/btn_share"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/lay_16"
+        android:background="@drawable/selector_event_sign"
+        android:text="分享邀请函"
+        android:textColor="@color/white" />
+</LinearLayout>

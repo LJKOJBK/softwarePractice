@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Dialog.NoTitle.Translucent" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowFrame">@null</item><!-- 边框 -->
+        <item name="android:windowIsFloating">true</item><!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item><!-- 半透明 -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowNoTitle">true</item><!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item><!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item><!-- 模糊 -->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+    </style>
+
+    <style name="App.Theme.Main" parent="Base.App.Theme.NoTitle">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="App.Theme.Tweet.Main" parent="Base.App.Theme.NoTitle">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/trans</item>
+        <item name="actionMenuTextColor">@color/black</item>
+        <item name="actionOverflowButtonStyle">@style/AppWidget.ActionButton.Overflow</item>
+    </style>
+
+    <style name="App.Theme.Tweet.Publish" parent="Base.App.Theme.NoTitle">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFrame">@null</item>
+    </style>
+
+    <!--状态栏一体式-->
+    <style name="ThemeTranslucent" parent="BaseTheme">
+
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!--状态栏一体式-->
+    <style name="PubTheme" parent="BaseTheme">
+        <item name="windowNoTitle">true</item><!-- 无标题 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item><!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item><!-- 模糊 -->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+    </style>
+
+    <style name="AppMainTheme" parent="App.Theme.Light">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="colorPrimary">@color/main_green</item>
+        <item name="android:textColorPrimary">@color/black_alpha_240</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+</resources>

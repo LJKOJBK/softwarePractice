@@ -1,0 +1,253 @@
+apply plugin: 'com.android.application'
+apply from: '../config/properties-util.gradle'
+
+android {
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        buildConfigField("String", "API_SERVER_URL", '"https://www.oschina.net/;http://www.oschina.biz/"')
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi' //, 'arm64-v7a', 'x86' , 'x86_64','arm64-v8a',
+        }
+    }
+
+    // rename the apk with the version name
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFile = new File(
+                    output.outputFile.parent + "/${variant.buildType.name}",
+                    "osc-android-${variant.versionName}-${variant.productFlavors[0].name}.apk".toLowerCase())
+        }
+    }
+
+    //signing files settings
+    signingConfigs {
+        if (propertyHaveSigningConfigs) {
+            debug {
+                storeFile file(propertyStoreFileStr)
+                storePassword propertyStorePwdStr
+                keyAlias propertyKeyAliasStr
+                keyPassword propertyKeyPwdStr
+            }
+
+            release {
+                storeFile file(propertyStoreFileStr)
+                storePassword propertyStorePwdStr
+                keyAlias propertyKeyAliasStr
+                keyPassword propertyKeyPwdStr
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    // 移除lint检查的error
+    lintOptions {
+        abortOnError false
+    }
+
+    //build type setting
+    buildTypes {
+
+        debug {
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (propertyHaveSigningConfigs)
+                signingConfig signingConfigs.debug
+        }
+
+        release {
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (propertyHaveSigningConfigs)
+                signingConfig signingConfigs.release
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "2g"
+    }
+
+    //product flavors
+    productFlavors {
+        oschina {
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "oschina"]
+        }
+        xiaomi {
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "xiaomi"]
+        }
+        wandoujia {
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "wandoujia"]
+        }
+        baidu {
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "baidu"]
+        }
+        huawei {
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "huawei"]
+        }
+        lenovo {
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "lenovo"]
+        }
+        meizu {
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "meizu"]
+        }
+        oppo {
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "oppo"]
+        }
+        vivo {
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "vivo"]
+        }
+        qihoo {//360版本
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "360"]
+        }
+        yingyongbao {//应用宝版本
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "yingyongbao"]
+        }
+        pp {//阿里应用（PP）
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "pp"]
+        }
+        jiuyi {//91助手
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "91"]
+        }
+        anzhuo {//安卓
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "anzhuo"]
+        }
+        anzhi {//安智市场
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "anzhi"]
+        }
+        yingyonghui {//应用汇
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "yingyonghui"]
+        }
+        mumayi {//木蚂蚁
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "mumayi"]
+        }
+        mm {//MM商城
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "mm"]
+        }
+        leshi {//乐视
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "leshi"]
+        }
+        jifeng {//机锋
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "jifeng"]
+        }
+        samsung {//三星
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "samsung"]
+        }
+        sougou {//搜狗手机助手
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "sougou"]
+        }
+        youyi {//优亿市场
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "youyi"]
+        }
+        nduo {//N多网
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "nduo"]
+        }
+        liantongwo {//联通沃商店
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "liantongwo"]
+        }
+        jinli {//金立
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "jinli"]
+        }
+        pc6 {// pc6.com
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "pc6"]
+        }
+        smartisan {//锤子应用商店
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "smartisan"]
+        }
+        maopao {//冒泡堂
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "maopao"]
+        }
+        liqu {//历趣世界
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "liqu"]
+        }
+        kuan {//酷安
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "kuan"]
+        }
+        tianyi {//天翼
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "tianyi"]
+        }
+        ersansiwu {//历趣世界
+            manifestPlaceholders = [BaiduMobAd_CHANNEL: "2345"]
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    if (propertyHaveDebugCompile) {
+        maven {
+            url propertyDebugCompileUrl
+        }
+    }
+}
+
+dependencies {
+    //noinspection GradleCompatible,GradleDependency
+    compile "com.android.support:support-v4:$rootProject.ext.supportVersion"
+    //noinspection GradleDependency
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
+    //noinspection GradleDependency
+    compile "com.android.support:design:$rootProject.ext.supportVersion"
+    //noinspection GradleDependency
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
+    //noinspection GradleDependency
+    compile "com.android.support:cardview-v7:$rootProject.ext.supportVersion"
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':open')
+    if (propertyHaveDebugCompile) {
+        compile propertyDebugCompile
+    }
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.github.chrisbanes.photoview:library:1.2.4'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    //noinspection GradleDependency
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.google.zxing:core:3.3.0'
+    compile 'com.joanzapata.android:android-iconify:1.0.9'
+    compile 'com.makeramen:roundedimageview:2.1.1'
+    compile 'pub.devrel:easypermissions:0.3.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //noinspection GradleDependency
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.upyun:upyun-android-sdk:2.0.5'
+    //noinspection GradleDependency
+    //    compile 'com.umeng.analytics:analytics:latest.integration'
+    //noinspection GradleDependency
+    compile 'com.baidu.mobstat:mtj-sdk:latest.integration'
+    //noinspection GradleDependency
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'net.oschina.common:common:0.2.1'
+    compile 'com.belerweb:pinyin4j:2.5.1'
+    compile 'com.davemorrissey.labs:subsampling-scale-image-view:3.6.0'
+    compile 'com.hyman:flowlayout-lib:1.1.2'
+    compile('com.github.mcxtzhang:SwipeDelMenuLayout:V1.2.5') {
+        exclude group: 'com.android.support:appcompat-v7', module: 'support-v4'
+    }
+    testCompile 'junit:junit:4.12'
+}
+
+
+apply plugin: 'com.getkeepsafe.dexcount'

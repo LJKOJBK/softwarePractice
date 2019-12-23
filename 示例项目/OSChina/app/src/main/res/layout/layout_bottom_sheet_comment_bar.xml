@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:clickable="true"
+    android:windowSoftInputMode="adjustPan|adjustResize"
+    android:orientation="vertical"
+    tools:ignore="KeyboardInaccessibleWidget">
+
+    <View style="@style/h_line" />
+
+    <net.oschina.app.improve.widget.RichEditText
+        android:id="@+id/et_comment"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="@dimen/lay_12"
+        android:layout_marginLeft="@dimen/lay_16"
+        android:layout_marginRight="@dimen/lay_16"
+        android:layout_marginTop="@dimen/lay_12"
+        android:background="@drawable/bg_comment"
+        android:elevation="0dp"
+        android:focusable="true"
+        android:gravity="top"
+        android:hint="@string/comment_hint"
+        android:outlineProvider="none"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:textSize="@dimen/font_16"
+        tools:targetApi="lollipop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="6dp"
+        android:paddingLeft="@dimen/lay_16"
+        android:paddingRight="@dimen/lay_16">
+
+        <ImageButton
+            android:id="@+id/ib_mention"
+            android:layout_width="@dimen/lay_28"
+            android:layout_height="@dimen/lay_28"
+            android:layout_marginRight="@dimen/lay_4"
+            android:background="@drawable/ic_material_ripple"
+            android:contentDescription="@null"
+            android:padding="@dimen/lay_4"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_tweet_mention_normal"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageButton
+            android:id="@+id/ib_face"
+            android:layout_width="@dimen/lay_28"
+            android:layout_height="@dimen/lay_28"
+            android:layout_marginRight="@dimen/lay_4"
+            android:background="@drawable/ic_material_ripple"
+            android:contentDescription="@null"
+            android:padding="@dimen/lay_4"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_tweet_expression_normal"
+            tools:ignore="RtlHardcoded" />
+
+
+        <CheckBox
+            android:id="@+id/cb_sync"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:button="@drawable/ic_selector_checkbox"
+            android:checked="false"
+            android:contentDescription="@null"
+            android:text="@string/send_tweet"
+            android:textColor="@color/text_secondary_color"
+            android:textSize="@dimen/font_12"
+            tools:visibility="visible" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn_comment"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:background="@drawable/selector_comment"
+            android:elevation="0dp"
+            android:outlineProvider="none"
+            android:text="@string/send_hint"
+            android:textColor="@color/btn_send_color"
+            tools:targetApi="lollipop" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="?attr/lineColor" />
+
+    <FrameLayout
+        android:id="@+id/fl_face"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:visibility="gone" />
+</LinearLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/lay_32"
+        android:layout_marginRight="@dimen/lay_32"
+        android:layout_marginTop="@dimen/lay_16"
+        android:text="大小"
+        android:textColor="#111111"
+        android:textSize="@dimen/font_16" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerSize"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/lay_16"
+        android:layout_marginTop="@dimen/lay_16"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/lay_32"
+        android:paddingRight="@dimen/lay_32" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/lay_32"
+        android:layout_marginRight="@dimen/lay_32"
+        android:text="颜色"
+        android:textColor="#111111"
+        android:textSize="@dimen/font_16" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerColor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/lay_16"
+        android:layout_marginTop="@dimen/lay_16"
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/lay_32"
+        android:paddingRight="@dimen/lay_32" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/lay_16"
+        android:paddingRight="@dimen/lay_16">
+
+        <ImageButton
+            android:id="@+id/btn_bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_material_ripple"
+            android:contentDescription="@string/app_name"
+            android:onClick="onClick"
+
+            tools:ignore="NestedWeights" />
+
+        <ImageButton
+            android:id="@+id/btn_italic"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_material_ripple"
+            android:contentDescription="@string/app_name"
+            android:onClick="onClick" />
+
+        <ImageButton
+            android:id="@+id/btn_mid_line"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_material_ripple"
+            android:contentDescription="@string/app_name"
+            android:onClick="onClick" />
+
+        <ImageButton
+            android:id="@+id/btn_align_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_material_ripple"
+            android:contentDescription="@string/app_name"
+            android:onClick="onClick" />
+
+        <ImageButton
+            android:id="@+id/btn_align_center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_material_ripple"
+            android:contentDescription="@string/app_name"
+            android:onClick="onClick" />
+
+        <ImageButton
+            android:id="@+id/btn_align_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_material_ripple"
+            android:contentDescription="@string/app_name"
+            android:onClick="onClick" />
+    </LinearLayout>
+</LinearLayout>

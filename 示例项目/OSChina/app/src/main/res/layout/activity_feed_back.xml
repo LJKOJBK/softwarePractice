@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:titleTextColor="@color/black"
+        app:navigationIcon="@mipmap/btn_back_dark_pressed"
+        app:popupTheme="@style/ToolbarPopupBlackTheme"
+        tools:ignore="UnusedAttribute" />
+
+    <View style="@style/h_line" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/lay_12"
+        android:layout_marginLeft="@dimen/lay_16"
+        android:layout_marginRight="@dimen/lay_16"
+        android:layout_marginTop="@dimen/lay_12"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_error"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/program_error_hint"
+            android:textColor="@color/feed_back_color"
+            android:textSize="@dimen/font_14" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/lay_12"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/feature_suggestions_hint"
+            android:textColor="@color/feed_back_color"
+            android:textSize="@dimen/font_14" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_feed_back"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginBottom="@dimen/lay_12"
+        android:layout_marginLeft="@dimen/lay_16"
+        android:layout_marginRight="@dimen/lay_16"
+        android:background="@color/main_background"
+        android:gravity="top"
+        android:hint="@string/feedback_hint"
+        android:padding="@dimen/lay_8"
+        android:textSize="@dimen/font_14" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/lay_16"
+        android:layout_marginRight="@dimen/lay_16"
+        android:text="@string/screenshot_hint"
+        android:textSize="@dimen/font_14" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="@dimen/lay_12"
+            android:layout_marginLeft="@dimen/lay_16"
+            android:layout_marginRight="@dimen/lay_16"
+            android:layout_marginTop="@dimen/lay_12"
+            android:background="@color/white"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_tweet_add" />
+
+        <ImageView
+            android:id="@+id/iv_clear_img"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/lay_4"
+            android:layout_marginTop="@dimen/lay_4"
+            android:background="@drawable/ib_clear_image_selector"
+            android:contentDescription="@null"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/lay_12"
+        android:layout_marginLeft="@dimen/lay_16"
+        android:layout_marginRight="@dimen/lay_16"
+        android:background="@drawable/selector_shake_get"
+        android:elevation="0dp"
+        android:onClick="onClick"
+        android:outlineProvider="none"
+        android:text="@string/submit_feedback_hint"
+        android:textColor="@color/white"
+        tools:targetApi="lollipop" />
+</LinearLayout>

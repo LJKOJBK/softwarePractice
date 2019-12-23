@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:id="@+id/ll_software"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="#F6F6F6"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/lay_16"
+            android:paddingRight="@dimen/lay_16"
+            android:text="软件"
+            android:textColor="@color/text_title_color"
+            android:textSize="@dimen/font_16"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_software_count"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:paddingLeft="@dimen/lay_16"
+            android:paddingRight="@dimen/lay_16"
+            android:text="查看剩余28款软件"
+            android:textColor="@color/main_green"
+            android:textSize="@dimen/font_16"
+            android:visibility="visible"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerSoftware"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/ll_article"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="#F6F6F6"
+        android:minHeight="46dp"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/lay_16"
+            android:paddingRight="@dimen/lay_16"
+            android:text="文章"
+            android:textColor="@color/text_title_color"
+            android:textSize="@dimen/font_16"
+            tools:ignore="HardcodedText" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/lay_16"
+            android:paddingRight="@dimen/lay_16">
+
+            <RadioButton
+                android:id="@+id/rb_relate_order"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="按相关度"
+                android:checked="true"
+                android:textColor="@color/search_order_text_color" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:background="@color/list_divider_color" />
+
+            <RadioButton
+                android:id="@+id/rb_hot_order"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:visibility="gone"
+                android:text="按热度"
+                android:textColor="@color/search_order_text_color" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/list_divider_color" />
+
+            <RadioButton
+                android:id="@+id/rb_time_order"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:text="按时间"
+                android:textColor="@color/search_order_text_color" />
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>

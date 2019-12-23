@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.oschina.app.improve.widget.RecyclerRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f9f9f9"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:scrollbars="none"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</net.oschina.app.improve.widget.RecyclerRefreshLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/icon_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="12dp"
+            android:text="4.0 全新上线"
+            android:textColor="#333333"
+            android:textSize="18dp"
+            tools:ignore="HardcodedText,SpUsage" />
+    </LinearLayout>
+
+    <net.oschina.app.improve.main.synthesize.article.RatioLayout
+        android:id="@+id/ratioLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:layout_ratio="0.755"
+        app:ratio_flag="width">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/ic_introduce_group" />
+    </net.oschina.app.improve.main.synthesize.article.RatioLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="12dp"
+            android:background="@drawable/bg_introduce_indicator_one" />
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/bg_introduce_indicator_two"
+            tools:ignore="RtlHardcoded" />
+    </LinearLayout>
+</RelativeLayout>

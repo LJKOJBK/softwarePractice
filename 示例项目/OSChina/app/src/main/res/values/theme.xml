@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--base theme light-->
+    <style name="Base.App.Theme.Light" parent="@style/Theme.AppCompat.Light">
+        <!--color primary-->
+        <item name="colorPrimary">@color/day_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/day_colorPrimaryDark</item>
+        <item name="colorAccent">@color/day_colorPrimary</item>
+
+        <!--text style-->
+        <item name="editTextColor">@color/gray</item>
+        <item name="textColor">@color/day_textColor</item>
+        <item name="infoTextColor">@color/day_infoTextColor</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorLink">#0b9a27</item>
+        <item name="android:editTextColor">@color/day_edit_color</item>
+        <item name="android:textColorHint">@color/day_edit_hit_color</item>
+
+        <!--action style-->
+        <item name="actionBarStyle">@style/App.Widget.ActionBar</item>
+        <item name="homeAsUpIndicator">@mipmap/btn_back_normal</item>
+
+        <!--action popup-->
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
+
+        <!--action menu-->
+        <item name="actionMenuTextColor">@color/white</item>
+
+        <!--action mode-->
+        <item name="actionModeBackground">@color/day_colorPrimary</item>
+
+        <!--toolbar style-->
+        <item name="actionBarSize">48dp</item>
+        <item name="toolbarStyle">@style/App.Widget.Light.Toolbar</item>
+
+        <!--button style-->
+        <item name="android:buttonStyle">@style/App.Widget.Button</item>
+
+        <!--window style-->
+        <item name="elevation">0dp</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="windows_bg">@color/window_background</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="dividerVertical">@color/list_divider_color</item>
+        <item name="dividerHorizontal">@color/list_divider_color</item>
+
+        <item name="layout_item_bg">@drawable/day_list_item_background</item>
+        <item name="layout_bg_normal">@color/day_layout_bg_normal</item>
+        <item name="sliding_block_bg">@mipmap/image_sliding_block</item>
+        <item name="comment_reply_container_bg">@mipmap/day_comment_reply_container_bg</item>
+
+        <item name="lineColor">@color/list_divider_color</item>
+
+        <item name="message_bg_left">@mipmap/chat_from_bg_normal</item>
+        <item name="message_bg_right">@mipmap/chat_to_bg_normal</item>
+
+        <item name="quickoption_icon_text_selector">@drawable/day_quickoption_icon_text_selector
+        </item>
+        <item name="quickoption_icon_album_selector">@drawable/day_quickoption_icon_album_selector
+        </item>
+        <item name="quickoption_icon_photo_selector">@drawable/day_quickoption_icon_photo_selector
+        </item>
+        <item name="quickoption_icon_voice_selector">@drawable/day_quickoption_icon_voice_selector
+        </item>
+        <item name="quickoption_icon_scan_selector">@drawable/day_quickoption_icon_scan_selector
+        </item>
+        <item name="quickoption_icon_note_selector">@drawable/day_quickoption_icon_note_selector
+        </item>
+
+        <item name="alertDialogTheme">@style/App.Theme.Dialog.Alert</item>
+    </style>
+
+    <!-- 日间模式 -->
+    <style name="App.Theme.Light" parent="Base.App.Theme.Light" />
+
+    <!-- 全透明的背景 -->
+    <style name="App.Theme.Transparent" parent="@style/App.Theme.Light">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!--作用于搜索界面-->
+    <style name="App.Theme.Search" parent="App.Theme.Light">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Base.App.Theme" parent="Base.App.Theme.Light">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Base.App.Theme.NoTitle" parent="App.Theme.Light">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--新账户中心-->
+    <style name="Account_Base.App.Theme.NoTitle" parent="Base.App.Theme.NoTitle">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="App.Theme.Tweet.Publish" parent="Base.App.Theme.NoTitle">
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="App.Theme.Tweet.Main" parent="Base.App.Theme.NoTitle" />
+
+    <style name="App.Theme.Main" parent="Base.App.Theme.NoTitle" />
+
+    <!--button-->
+    <style name="App.Widget.Button" parent="Widget.AppCompat.Button">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/trans</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="elevation">0dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--toolbar-->
+    <style name="Base.App.Widget.Toolbar" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="android:height">?attr/actionBarSize</item>
+        <item name="titleTextAppearance">@style/App.TextAppearance.Widget.Toolbar.Title</item>
+        <item name="titleMargin">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+    </style>
+
+    <style name="App.Widget.Light.Toolbar" parent="Base.App.Widget.Toolbar">
+        <item name="navigationIcon">@drawable/selector_nav_back_light</item>
+    </style>
+
+    <style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat.Dark">
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item> <!--新增一个item，用于控制menu-->
+    </style>
+
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="android:actionMenuTextColor">@color/white</item>
+        <item name="overlapAnchor">false</item>  <!--把该属性改为false即可使menu位置位于toolbar之下-->
+    </style>
+
+
+    <style name="ToolbarPopupBlackTheme" parent="@style/ThemeOverlay.AppCompat.Dark">
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuBlackStyle</item> <!--新增一个item，用于控制menu-->
+    </style>
+
+    <style name="OverflowMenuBlackStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="android:actionMenuTextColor">@color/black</item>
+        <item name="overlapAnchor">false</item>  <!--把该属性改为false即可使menu位置位于toolbar之下-->
+    </style>
+
+    <style name="AppWidget.ActionButton.Overflow" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@mipmap/ic_menu_more</item>
+    </style>
+
+    <style name="App.Widget.Dark.Toolbar" parent="Base.App.Widget.Toolbar">
+        <item name="navigationIcon">@drawable/selector_nav_back_night</item>
+    </style>
+
+    <!--text appearance-->
+    <style name="App.TextAppearance.Widget.Toolbar.Title" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="App.TextAppearance.Widget.ActionBar.Title" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
+
+    <!--action bar-->
+    <style name="App.Widget.ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="background">?attr/colorPrimary</item>
+        <item name="titleTextStyle">@style/App.TextAppearance.Widget.ActionBar.Title</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="Theme.App.ActionBar" parent="style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <!-- Support library compatibility -->
+        <item name="elevation">0dp</item>
+    </style>
+
+    <!--启动界面主题-->
+    <style name="App.Theme.Launch" parent="Base.App.Theme">
+        <!--<item name="android:windowBackground">@mipmap/default_android</item>-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <style name="App.Theme.Dialog.Alert" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="android:textColorPrimary">@color/black_alpha_240</item>
+    </style>
+
+</resources>

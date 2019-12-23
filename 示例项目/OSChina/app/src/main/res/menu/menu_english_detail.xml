@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_translate"
+        android:title="翻译"
+        android:icon="@mipmap/ic_translate_en"
+        app:showAsAction="always"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/menu_share"
+        android:icon="@mipmap/ic_share_black_pressed"
+        android:title="@string/share_to"
+        android:visible="true"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+
+</menu>
