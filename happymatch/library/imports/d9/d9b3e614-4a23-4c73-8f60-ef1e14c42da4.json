@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "kai_450_xin_9",
+    "texture": "5f5782d9-8aa7-48ca-adc3-580013c84e6f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      76,
+      80
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      76,
+      80
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

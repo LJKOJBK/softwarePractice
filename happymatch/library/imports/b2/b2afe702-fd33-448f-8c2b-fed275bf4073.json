@@ -1,0 +1,29 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "chicken_line_13",
+    "texture": "be9763fb-f3fb-4194-8b5b-02e8268ef9dd",
+    "atlas": "e5672f76-9e9b-48e7-a6c2-94441d9d8bd8",
+    "rect": [
+      387,
+      291,
+      76,
+      77
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      78,
+      79
+    ],
+    "rotated": 1,
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

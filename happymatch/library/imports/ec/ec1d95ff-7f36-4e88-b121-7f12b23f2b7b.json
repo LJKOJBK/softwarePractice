@@ -1,0 +1,29 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "chicken_wrap_16",
+    "texture": "be9763fb-f3fb-4194-8b5b-02e8268ef9dd",
+    "atlas": "e5672f76-9e9b-48e7-a6c2-94441d9d8bd8",
+    "rect": [
+      314,
+      367,
+      78,
+      79
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      78,
+      81
+    ],
+    "rotated": 1,
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

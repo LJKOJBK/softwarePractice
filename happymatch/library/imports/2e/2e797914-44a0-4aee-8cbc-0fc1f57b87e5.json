@@ -1,0 +1,29 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cat_click_09",
+    "texture": "e4992ee6-ffa8-42ae-9acb-c22bcb9c944d",
+    "atlas": "342eff0e-8176-456b-b73d-7d8a1e022886",
+    "rect": [
+      946,
+      2,
+      68,
+      57
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      68,
+      61
+    ],
+    "rotated": 1,
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

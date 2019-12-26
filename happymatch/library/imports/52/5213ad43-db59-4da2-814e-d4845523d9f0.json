@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "chicken_click_10",
+    "texture": "be9763fb-f3fb-4194-8b5b-02e8268ef9dd",
+    "atlas": "e5672f76-9e9b-48e7-a6c2-94441d9d8bd8",
+    "rect": [
+      530,
+      2,
+      66,
+      64
+    ],
+    "offset": [
+      0,
+      -1
+    ],
+    "originalSize": [
+      66,
+      66
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

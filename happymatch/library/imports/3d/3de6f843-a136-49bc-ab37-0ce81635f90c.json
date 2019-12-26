@@ -1,0 +1,29 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bird_effect0000",
+    "texture": "968032ee-251b-4433-8408-b2432f4a1c27",
+    "atlas": "98bc59ee-42dd-46f9-93ad-4008a385d8b8",
+    "rect": [
+      115,
+      114,
+      112,
+      113
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      112,
+      113
+    ],
+    "rotated": 1,
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

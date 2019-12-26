@@ -1,0 +1,29 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "fox_column_25",
+    "texture": "82a4017b-df3b-428d-b272-64b27fe44b4f",
+    "atlas": "f6078205-4c7d-4108-a413-9bcbfffac0c1",
+    "rect": [
+      73,
+      881,
+      76,
+      71
+    ],
+    "offset": [
+      -1,
+      1
+    ],
+    "originalSize": [
+      80,
+      73
+    ],
+    "rotated": 1,
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

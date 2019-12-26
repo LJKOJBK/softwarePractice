@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "kai_231_destroy_light_15",
+    "texture": "76bdc9e3-1e56-4e16-9a83-7cc0d2dcdf61",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      85,
+      87
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      85,
+      87
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

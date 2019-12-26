@@ -1,0 +1,419 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_name": "chicken.plist",
+  "_objFlags": 0,
+  "_native": "",
+  "_spriteFrames": {
+    "chicken_click_00": {
+      "__uuid__": "1b175e16-0c57-4363-9432-2b038233310a"
+    },
+    "chicken_click_01": {
+      "__uuid__": "8da8fc41-4749-4301-8a15-e916a3d90956"
+    },
+    "chicken_click_10": {
+      "__uuid__": "5213ad43-db59-4da2-814e-d4845523d9f0"
+    },
+    "chicken_click_11": {
+      "__uuid__": "19007ddb-3b52-4b27-b2dc-8a21511cad51"
+    },
+    "chicken_click_12": {
+      "__uuid__": "29dfc4a5-e9f0-46de-b210-45c75c953430"
+    },
+    "chicken_click_13": {
+      "__uuid__": "8059c7dc-b23b-4a6c-a03f-ec359567c41e"
+    },
+    "chicken_click_14": {
+      "__uuid__": "2d8a82a8-96b9-4759-b49a-c686493018f6"
+    },
+    "chicken_click_15": {
+      "__uuid__": "cfb04705-b87f-4878-b07a-fea7488996d9"
+    },
+    "chicken_click_16": {
+      "__uuid__": "3ca62db6-a389-4bd1-927a-a59e0649d5ac"
+    },
+    "chicken_click_17": {
+      "__uuid__": "085305ba-0b7d-4b14-a12e-81520cf7bcc6"
+    },
+    "chicken_click_18": {
+      "__uuid__": "438648ae-3fed-4614-9b7f-0b77d436fbe7"
+    },
+    "chicken_click_19": {
+      "__uuid__": "82e53aef-6a8d-4dfe-b697-062f0355d871"
+    },
+    "chicken_click_02": {
+      "__uuid__": "034b55a9-c91c-4106-8da1-1bb149293fa4"
+    },
+    "chicken_click_20": {
+      "__uuid__": "59641062-7a43-4e54-8439-2d427d13a481"
+    },
+    "chicken_click_21": {
+      "__uuid__": "b3055c38-57e7-4e31-988f-cfe777c6eb7b"
+    },
+    "chicken_click_22": {
+      "__uuid__": "db80ba16-e864-425d-9478-1c5f1c7bb8a9"
+    },
+    "chicken_click_23": {
+      "__uuid__": "fe0a1af2-677a-44bf-a00c-a440d5fcf7c5"
+    },
+    "chicken_click_24": {
+      "__uuid__": "3f074dfb-96bf-41c2-ab08-c6461cf849b2"
+    },
+    "chicken_click_25": {
+      "__uuid__": "d26afec3-3b39-49a0-8aa1-3612c023cb5b"
+    },
+    "chicken_click_26": {
+      "__uuid__": "9b408cc1-20b4-4c5c-bdd9-a8ceb2f30231"
+    },
+    "chicken_click_27": {
+      "__uuid__": "ef4f1386-6458-4a4a-b1f1-014d615f460a"
+    },
+    "chicken_click_28": {
+      "__uuid__": "283fd0ca-d481-4174-a83e-d16f645b9be0"
+    },
+    "chicken_click_29": {
+      "__uuid__": "31bf3f5f-6837-484b-8bc1-dc1dd33677d3"
+    },
+    "chicken_click_03": {
+      "__uuid__": "4552bd76-e7ab-4e38-80b8-05840437057a"
+    },
+    "chicken_click_04": {
+      "__uuid__": "a5f21461-d951-4478-812d-d903ff75dd0b"
+    },
+    "chicken_click_05": {
+      "__uuid__": "892797c7-54a3-424b-9648-b79ea864bbc4"
+    },
+    "chicken_click_06": {
+      "__uuid__": "de3d9cee-dd0a-4a9e-9590-593af3c7c2f1"
+    },
+    "chicken_click_07": {
+      "__uuid__": "126de3c9-2453-4e0a-b40f-599439cee0dc"
+    },
+    "chicken_click_08": {
+      "__uuid__": "569c13af-a681-4b74-80b4-d01d959a74a1"
+    },
+    "chicken_click_09": {
+      "__uuid__": "daeea418-2ab4-459d-aba2-1d35a9f673fe"
+    },
+    "chicken_column_00": {
+      "__uuid__": "bb5c49d9-85a9-40ba-ad9f-be8da4397b90"
+    },
+    "chicken_column_01": {
+      "__uuid__": "b7c76ecf-df5c-4fa3-ae0b-a6448b388d26"
+    },
+    "chicken_column_10": {
+      "__uuid__": "0fb31de7-bdf2-4c14-9c2f-c2e9ea234e10"
+    },
+    "chicken_column_11": {
+      "__uuid__": "26ae7dae-732a-424c-a323-364b7911eee6"
+    },
+    "chicken_column_12": {
+      "__uuid__": "abd2b7db-d656-4afc-b07f-bbdf59089ae0"
+    },
+    "chicken_column_13": {
+      "__uuid__": "61ea510d-c9ea-4b86-9be3-f150b17cc222"
+    },
+    "chicken_column_14": {
+      "__uuid__": "9cd91a9d-c043-48be-889d-c6526ead828c"
+    },
+    "chicken_column_15": {
+      "__uuid__": "4161a50f-b6e4-4431-a2c5-e9c47df2fce0"
+    },
+    "chicken_column_16": {
+      "__uuid__": "579c1ed7-fe41-4ac1-bc55-ae74bb878c68"
+    },
+    "chicken_column_17": {
+      "__uuid__": "444c7d26-1a55-44e6-aad3-a591e2e74433"
+    },
+    "chicken_column_18": {
+      "__uuid__": "295fa68e-e720-4658-b884-1230e7b09c8f"
+    },
+    "chicken_column_19": {
+      "__uuid__": "65d9609a-ff05-497f-8d27-d6919debe849"
+    },
+    "chicken_column_02": {
+      "__uuid__": "d3c1895a-827f-419b-960a-0bbb71a0dc96"
+    },
+    "chicken_column_20": {
+      "__uuid__": "699efce6-e0cb-45c4-b023-2c4dbdaa2823"
+    },
+    "chicken_column_21": {
+      "__uuid__": "2938f874-b707-45cd-a02c-8c8c55c6fd77"
+    },
+    "chicken_column_22": {
+      "__uuid__": "5d8e14bf-04b2-49a9-b6a5-e204828e0fa4"
+    },
+    "chicken_column_23": {
+      "__uuid__": "1a59fb00-c961-41bc-a5e5-5627f78c72ae"
+    },
+    "chicken_column_24": {
+      "__uuid__": "3205e02e-7665-4d38-b4b2-17207f09254e"
+    },
+    "chicken_column_25": {
+      "__uuid__": "39394647-73d8-4bf5-91af-c3c699d055b7"
+    },
+    "chicken_column_26": {
+      "__uuid__": "11279aab-aeaf-4420-9493-89eddf38317c"
+    },
+    "chicken_column_27": {
+      "__uuid__": "cf0dbd4c-ddbb-410c-b1c6-ce5d2cfedbca"
+    },
+    "chicken_column_28": {
+      "__uuid__": "1ee089fe-e7c7-4824-ba1b-b2fa3b87b589"
+    },
+    "chicken_column_03": {
+      "__uuid__": "c8de7e9f-9377-4cf2-9c0f-406697cc48c9"
+    },
+    "chicken_column_04": {
+      "__uuid__": "ba33db08-e379-432f-9856-c006df8da8f6"
+    },
+    "chicken_column_05": {
+      "__uuid__": "fa442226-6fa2-476b-8116-9e4cf1c56764"
+    },
+    "chicken_column_06": {
+      "__uuid__": "5b14454a-8361-4cc5-95f1-ee5798ebc6bd"
+    },
+    "chicken_column_07": {
+      "__uuid__": "d016a81b-db95-443d-9fee-21baa76c8174"
+    },
+    "chicken_column_08": {
+      "__uuid__": "59bafdf2-7ddf-4d05-8502-a3f59e4faab4"
+    },
+    "chicken_column_09": {
+      "__uuid__": "c9c0ce13-5e29-4b7b-8957-3329706d5ca8"
+    },
+    "chicken_line_00": {
+      "__uuid__": "d75acb00-dd2a-4e32-a814-6b450375568b"
+    },
+    "chicken_line_01": {
+      "__uuid__": "0b676239-193e-483a-bd94-e4eef8279152"
+    },
+    "chicken_line_10": {
+      "__uuid__": "19bd234d-4343-42cf-9ce4-6c50364173bd"
+    },
+    "chicken_line_11": {
+      "__uuid__": "f774a241-04a3-4c53-9720-57fb08affff2"
+    },
+    "chicken_line_12": {
+      "__uuid__": "d82bbfc9-2ebc-4887-aa0f-9bd3b3fc4fd6"
+    },
+    "chicken_line_13": {
+      "__uuid__": "b2afe702-fd33-448f-8c2b-fed275bf4073"
+    },
+    "chicken_line_14": {
+      "__uuid__": "8707b1b5-ecae-4c57-b8c7-0a3e25320359"
+    },
+    "chicken_line_15": {
+      "__uuid__": "f3158f58-a715-4e04-905f-1ccfb3c59c61"
+    },
+    "chicken_line_16": {
+      "__uuid__": "38e369df-8ae3-4ff6-b6ab-23c8b35973df"
+    },
+    "chicken_line_17": {
+      "__uuid__": "9bab4d10-d05a-4ebf-bba3-30aa6ec044db"
+    },
+    "chicken_line_18": {
+      "__uuid__": "8a11f277-99ac-4485-b274-a742c395143a"
+    },
+    "chicken_line_19": {
+      "__uuid__": "508eeea1-4871-488c-b37f-ce7a9c66bed1"
+    },
+    "chicken_line_02": {
+      "__uuid__": "69634265-caf0-4652-a4c6-022533eeb76e"
+    },
+    "chicken_line_20": {
+      "__uuid__": "844fbc81-e0e4-40c3-948b-08f9bd916c76"
+    },
+    "chicken_line_21": {
+      "__uuid__": "2318b7ed-8d8c-4202-873e-e0d6e855f833"
+    },
+    "chicken_line_22": {
+      "__uuid__": "6b2dbfc6-f65b-4afc-847e-7bc82bcb05b8"
+    },
+    "chicken_line_23": {
+      "__uuid__": "7e1782ab-9386-49d1-84d6-d8d030ef05d9"
+    },
+    "chicken_line_24": {
+      "__uuid__": "079a3af8-186e-4eb6-a8cc-1eb1878c7dba"
+    },
+    "chicken_line_25": {
+      "__uuid__": "1df96ba3-af58-4cd1-9a3b-081f923dd958"
+    },
+    "chicken_line_26": {
+      "__uuid__": "e769a5f3-58ca-46cb-badc-e96618368b47"
+    },
+    "chicken_line_27": {
+      "__uuid__": "6357241a-8410-4dfa-b589-d1662d0d807c"
+    },
+    "chicken_line_28": {
+      "__uuid__": "5bee4f5a-4faf-4728-aeb0-6847d839bdac"
+    },
+    "chicken_line_03": {
+      "__uuid__": "c9582108-c013-40ab-b338-0e7147af7903"
+    },
+    "chicken_line_04": {
+      "__uuid__": "46a0d222-858a-4454-bdae-7fc4a9419bec"
+    },
+    "chicken_line_05": {
+      "__uuid__": "438a2639-be73-4f80-98f7-0d981e77a612"
+    },
+    "chicken_line_06": {
+      "__uuid__": "c6436b0d-7192-4352-9779-d34eafb77fae"
+    },
+    "chicken_line_07": {
+      "__uuid__": "a38feb89-347f-4723-95c5-bd0439bbf03a"
+    },
+    "chicken_line_08": {
+      "__uuid__": "1e959e08-4ced-42d0-8e74-f42ed093c1ba"
+    },
+    "chicken_line_09": {
+      "__uuid__": "d9e59f63-5fce-47fc-8c35-63fa82f67ee2"
+    },
+    "chicken_wrap_00": {
+      "__uuid__": "d2994ff6-26ff-40c3-bcbd-de19f190d7ab"
+    },
+    "chicken_wrap_01": {
+      "__uuid__": "c447188a-5606-49cb-85f2-27ed6d958166"
+    },
+    "chicken_wrap_10": {
+      "__uuid__": "bce8e060-7256-47c0-8cca-0c3aaed0be71"
+    },
+    "chicken_wrap_11": {
+      "__uuid__": "aa2a9e07-8926-4996-9eff-9c2d91f7c1a0"
+    },
+    "chicken_wrap_12": {
+      "__uuid__": "7b03284f-de53-4a9a-abdd-6e99d286be14"
+    },
+    "chicken_wrap_13": {
+      "__uuid__": "adaffe56-b985-494c-91e6-0688d6237e76"
+    },
+    "chicken_wrap_14": {
+      "__uuid__": "60f2ee75-6679-4d3e-939e-b2e560a1cfad"
+    },
+    "chicken_wrap_15": {
+      "__uuid__": "fa60e226-5772-416b-bcdc-c9d47c93f467"
+    },
+    "chicken_wrap_16": {
+      "__uuid__": "ec1d95ff-7f36-4e88-b121-7f12b23f2b7b"
+    },
+    "chicken_wrap_17": {
+      "__uuid__": "d8838b38-3902-4810-9ab7-f19bbeb34b32"
+    },
+    "chicken_wrap_18": {
+      "__uuid__": "767f53e7-b87d-4e2c-91cf-b6042422bd9d"
+    },
+    "chicken_wrap_19": {
+      "__uuid__": "c06c9064-9677-4ced-84d1-cd0d15733b48"
+    },
+    "chicken_wrap_02": {
+      "__uuid__": "a1071abd-9658-45c7-bedf-747ec1691e9e"
+    },
+    "chicken_wrap_20": {
+      "__uuid__": "73706d1d-9e9a-4833-a1c5-f55705697105"
+    },
+    "chicken_wrap_21": {
+      "__uuid__": "96bb0c61-d1a6-4e87-bdf1-e5ed5dbab566"
+    },
+    "chicken_wrap_22": {
+      "__uuid__": "9eaa48bf-85c9-4219-9273-c04a8f3f8a8a"
+    },
+    "chicken_wrap_23": {
+      "__uuid__": "a487c6e3-b55e-456a-b5e3-bb09af7d72af"
+    },
+    "chicken_wrap_24": {
+      "__uuid__": "03a1cfa3-e37b-4a34-afab-f0f3e2ebfb0c"
+    },
+    "chicken_wrap_25": {
+      "__uuid__": "9b60c11b-7f7f-4dd7-a500-3579c7843aaa"
+    },
+    "chicken_wrap_26": {
+      "__uuid__": "408f8cd7-b352-40f7-b9cb-0022a47c8c90"
+    },
+    "chicken_wrap_27": {
+      "__uuid__": "0f29eb9c-c079-48c2-8a5b-e60205754747"
+    },
+    "chicken_wrap_28": {
+      "__uuid__": "2ee1656c-5d78-4153-9cb3-2fe67c8bc79e"
+    },
+    "chicken_wrap_29": {
+      "__uuid__": "baacf559-bfe5-407a-950b-d8c1ab507c87"
+    },
+    "chicken_wrap_03": {
+      "__uuid__": "db41b7a9-42e9-4fa0-81ce-6d663e13ffae"
+    },
+    "chicken_wrap_30": {
+      "__uuid__": "6dbf955b-4a52-4e29-ac69-eb53e912c940"
+    },
+    "chicken_wrap_31": {
+      "__uuid__": "4984939c-5f54-490e-8679-57aee2357333"
+    },
+    "chicken_wrap_32": {
+      "__uuid__": "fd9fe655-c935-4c00-8fa3-e8d9566b3339"
+    },
+    "chicken_wrap_33": {
+      "__uuid__": "ef8e7e95-75df-4a47-aa9d-970ef7694f24"
+    },
+    "chicken_wrap_34": {
+      "__uuid__": "2f35d55a-9d03-4be4-9374-c088fe2a3eb0"
+    },
+    "chicken_wrap_35": {
+      "__uuid__": "6c67c047-1b26-4dc4-baa3-a4b783ce5427"
+    },
+    "chicken_wrap_36": {
+      "__uuid__": "de3be045-5b5e-4e61-8ce9-819ecfa1fb23"
+    },
+    "chicken_wrap_37": {
+      "__uuid__": "0c6a0104-b14b-4617-8f51-ebe061e65721"
+    },
+    "chicken_wrap_38": {
+      "__uuid__": "bfefe7a0-72f9-4be7-95d8-19ed4d081771"
+    },
+    "chicken_wrap_39": {
+      "__uuid__": "89719d60-04e2-4ca6-854f-285dbf5ced09"
+    },
+    "chicken_wrap_04": {
+      "__uuid__": "f12e0008-c7a5-42a4-aab2-b49a5e9c1b75"
+    },
+    "chicken_wrap_40": {
+      "__uuid__": "9e27e724-2b64-430f-aca5-6ba50077493b"
+    },
+    "chicken_wrap_41": {
+      "__uuid__": "54d510b1-35d6-4022-8944-5acfb512d2e9"
+    },
+    "chicken_wrap_42": {
+      "__uuid__": "7fd942d2-20ec-4e3f-83ef-268cf8319e45"
+    },
+    "chicken_wrap_43": {
+      "__uuid__": "39f6d6a8-bad4-412c-a09a-3302e9103691"
+    },
+    "chicken_wrap_44": {
+      "__uuid__": "4e259e2c-467c-4314-9bb2-3c45cd912574"
+    },
+    "chicken_wrap_45": {
+      "__uuid__": "f9df333f-e998-4c49-a373-0d6ab5a7c23b"
+    },
+    "chicken_wrap_46": {
+      "__uuid__": "0b7ab1db-7972-4584-9089-2e9024c8ee27"
+    },
+    "chicken_wrap_47": {
+      "__uuid__": "9f522937-c1ea-45bc-90a0-11cf529cabbc"
+    },
+    "chicken_wrap_48": {
+      "__uuid__": "6a5e0118-a7ef-40c1-8b8b-f9ae9d23d7ae"
+    },
+    "chicken_wrap_05": {
+      "__uuid__": "095c92a4-2229-46f7-baad-4dbe76038547"
+    },
+    "chicken_wrap_06": {
+      "__uuid__": "9c1cec39-a306-42e1-9f41-9b1ea5017a7a"
+    },
+    "chicken_wrap_07": {
+      "__uuid__": "de563a2c-0ed6-4445-8e49-8e4cc6dda65c"
+    },
+    "chicken_wrap_08": {
+      "__uuid__": "c05bf5e3-b778-46f5-ba51-1ed5bc87cf8d"
+    },
+    "chicken_wrap_09": {
+      "__uuid__": "d65db2dc-3e6e-4fac-9c44-b8df99fa3e03"
+    }
+  }
+}

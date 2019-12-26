@@ -1,0 +1,419 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_name": "fox.plist",
+  "_objFlags": 0,
+  "_native": "",
+  "_spriteFrames": {
+    "fox_click_00": {
+      "__uuid__": "5ff58f04-89e2-4e3a-9517-04b5edfbf1b1"
+    },
+    "fox_click_01": {
+      "__uuid__": "a086ecc7-ff2c-4422-b1f4-356b0e1c23fd"
+    },
+    "fox_click_10": {
+      "__uuid__": "a5ba8a2f-8224-40e4-b2c2-e90eab07ce36"
+    },
+    "fox_click_11": {
+      "__uuid__": "0f38de1e-36fb-4aba-ae61-0aba9641d81f"
+    },
+    "fox_click_12": {
+      "__uuid__": "c0e43920-e786-4aa5-869c-1c5311b75db2"
+    },
+    "fox_click_13": {
+      "__uuid__": "8e36d0cd-5d6f-4696-b87f-4597f93dca84"
+    },
+    "fox_click_14": {
+      "__uuid__": "6ccf4aef-d128-4303-80f2-b1b70859b393"
+    },
+    "fox_click_15": {
+      "__uuid__": "634fec82-6cab-453f-a71b-e4ac73e66a94"
+    },
+    "fox_click_16": {
+      "__uuid__": "26c2955c-eec1-4c20-96b3-f3a8fc2e7ea0"
+    },
+    "fox_click_17": {
+      "__uuid__": "237dcf28-98ca-4a2b-a136-98ff4c2e7a3e"
+    },
+    "fox_click_18": {
+      "__uuid__": "2fe912f6-7c6a-4299-aaf7-777f49a9894b"
+    },
+    "fox_click_19": {
+      "__uuid__": "9e51b987-ee2d-4d90-ae8a-b362a1f47580"
+    },
+    "fox_click_02": {
+      "__uuid__": "85c3c152-d7b5-4e61-929d-0d8e7fff8e86"
+    },
+    "fox_click_20": {
+      "__uuid__": "e35ad6d6-d2b3-480e-a7b5-3f7ca89d78fc"
+    },
+    "fox_click_21": {
+      "__uuid__": "97e44247-4a6c-4d80-81fa-f79967dc0304"
+    },
+    "fox_click_22": {
+      "__uuid__": "b44351aa-7a39-4576-9b21-457c0d494468"
+    },
+    "fox_click_23": {
+      "__uuid__": "121228c8-2a2d-443c-9cf9-4c5aeff1db3b"
+    },
+    "fox_click_24": {
+      "__uuid__": "0cfaa010-516d-4ba9-8029-fc7d9a214ac8"
+    },
+    "fox_click_25": {
+      "__uuid__": "8e3a8266-0e53-4ac2-a137-232b76ea8b7b"
+    },
+    "fox_click_26": {
+      "__uuid__": "2dfb6bfb-6800-42a4-88c1-d8bb39c9148a"
+    },
+    "fox_click_27": {
+      "__uuid__": "c0f9ed32-75cd-40aa-83fd-d399a7c48c96"
+    },
+    "fox_click_28": {
+      "__uuid__": "dc29ee0e-6402-407d-829d-a75d26b39929"
+    },
+    "fox_click_29": {
+      "__uuid__": "09315680-cc5d-4624-907a-487566b328a7"
+    },
+    "fox_click_03": {
+      "__uuid__": "82f24532-b031-410d-87fe-c75f84f2b44b"
+    },
+    "fox_click_04": {
+      "__uuid__": "55aaf8e6-90a8-4f93-8162-4ddb3d6b86ba"
+    },
+    "fox_click_05": {
+      "__uuid__": "0d3c089c-0ddf-4948-a79c-0fa6a488f2f8"
+    },
+    "fox_click_06": {
+      "__uuid__": "61501dca-b689-47fa-86ab-b5cc5b15c46a"
+    },
+    "fox_click_07": {
+      "__uuid__": "48d36a3a-13da-44c7-bf29-72c2511e7337"
+    },
+    "fox_click_08": {
+      "__uuid__": "70cd8cc7-58f6-4507-a3db-3cf80325ccc1"
+    },
+    "fox_click_09": {
+      "__uuid__": "87098aa9-4de9-4384-8a27-5273ef3a6e86"
+    },
+    "fox_column_00": {
+      "__uuid__": "bf540b5d-f476-475e-9555-462115db1d58"
+    },
+    "fox_column_01": {
+      "__uuid__": "bc93da15-f8b6-4af6-a081-0a0f882e43e8"
+    },
+    "fox_column_10": {
+      "__uuid__": "a3b14b94-394c-4256-a96b-6733e2511247"
+    },
+    "fox_column_11": {
+      "__uuid__": "ade009d9-b450-41a8-afa9-9afaf42dab31"
+    },
+    "fox_column_12": {
+      "__uuid__": "c85cfebd-f365-445e-927e-277451841d8a"
+    },
+    "fox_column_13": {
+      "__uuid__": "89032149-87a1-47f0-96b0-1dfe5dccfcb3"
+    },
+    "fox_column_14": {
+      "__uuid__": "836c4a77-aeaf-40bc-867e-680d65428511"
+    },
+    "fox_column_15": {
+      "__uuid__": "68777baf-91bc-4351-8aff-c1a3ecd800d0"
+    },
+    "fox_column_16": {
+      "__uuid__": "9267cda1-7cfd-45e0-a936-7de2201ac10d"
+    },
+    "fox_column_17": {
+      "__uuid__": "ff89ac52-1ba5-416d-b13b-e7710fe7c59a"
+    },
+    "fox_column_18": {
+      "__uuid__": "d8f0f74b-8a6d-48b6-ac46-402b3313705c"
+    },
+    "fox_column_19": {
+      "__uuid__": "99e33a6b-5de6-4feb-b47b-49cab485232a"
+    },
+    "fox_column_02": {
+      "__uuid__": "0f0b0083-c788-4f58-a88e-e98044252b9b"
+    },
+    "fox_column_20": {
+      "__uuid__": "7e257a62-f05d-4c7b-98ef-e6e14b0993b0"
+    },
+    "fox_column_21": {
+      "__uuid__": "a6268f0a-1035-44df-a8fd-63cabf12d501"
+    },
+    "fox_column_22": {
+      "__uuid__": "f9416fda-b9d1-4013-99eb-bb78520698e9"
+    },
+    "fox_column_23": {
+      "__uuid__": "8cb63d21-f0e2-4180-a137-5c9ea8aebba3"
+    },
+    "fox_column_24": {
+      "__uuid__": "3912d71d-85a8-4c3c-ac02-538495bbb9c6"
+    },
+    "fox_column_25": {
+      "__uuid__": "7ebb30d7-1a09-4e01-9a4f-8b7511da1c03"
+    },
+    "fox_column_26": {
+      "__uuid__": "166f10c5-3a33-476f-8f65-0ec2e94fbf57"
+    },
+    "fox_column_27": {
+      "__uuid__": "7bc51126-6990-458d-b473-44ec4c504c8a"
+    },
+    "fox_column_28": {
+      "__uuid__": "d022aee1-69eb-49f3-980d-50433415b15a"
+    },
+    "fox_column_03": {
+      "__uuid__": "c05c1c66-72b8-44c4-85b0-ab4dbb673e48"
+    },
+    "fox_column_04": {
+      "__uuid__": "d2755621-55c0-4512-8e68-b90630af95b0"
+    },
+    "fox_column_05": {
+      "__uuid__": "5c636c3c-0afc-44eb-be2b-3d5b9de5d341"
+    },
+    "fox_column_06": {
+      "__uuid__": "a4f284f5-b8dc-487b-9e75-ca95335632fc"
+    },
+    "fox_column_07": {
+      "__uuid__": "0e82e8cd-54cc-4ef3-b220-c1f6bfa184b8"
+    },
+    "fox_column_08": {
+      "__uuid__": "fcfbf4bb-28ef-46c4-bcdd-da65f87f3ce0"
+    },
+    "fox_column_09": {
+      "__uuid__": "e0e5adcf-7243-4d65-9bff-8115e683f4e1"
+    },
+    "fox_line_00": {
+      "__uuid__": "86265a4d-299f-4a2a-925d-19b06136487b"
+    },
+    "fox_line_01": {
+      "__uuid__": "4f0ee80a-e9dd-41d7-8fc2-47c1926e7252"
+    },
+    "fox_line_10": {
+      "__uuid__": "c3a8f8ba-2e0f-422d-be20-14cd18a54e71"
+    },
+    "fox_line_11": {
+      "__uuid__": "8b0097db-1e4d-4320-b8b6-7c17fe22ab91"
+    },
+    "fox_line_12": {
+      "__uuid__": "25398bd8-de57-4c6b-864e-9b0440b258a2"
+    },
+    "fox_line_13": {
+      "__uuid__": "a7925e16-b991-4a1d-ad7d-029c3533efa7"
+    },
+    "fox_line_14": {
+      "__uuid__": "2be9345e-617e-43a7-a67d-7c33696ae6a6"
+    },
+    "fox_line_15": {
+      "__uuid__": "9c629207-b981-4deb-a2e6-884732daeac2"
+    },
+    "fox_line_16": {
+      "__uuid__": "50090308-d476-40c3-91ea-04cd1000d62f"
+    },
+    "fox_line_17": {
+      "__uuid__": "2d794a31-9e31-49ff-be03-55a55677de13"
+    },
+    "fox_line_18": {
+      "__uuid__": "6ba007d9-9c9f-4e81-8a66-69bf9a8131b3"
+    },
+    "fox_line_19": {
+      "__uuid__": "447a702c-9f05-46b1-9f24-22272a59f5fe"
+    },
+    "fox_line_02": {
+      "__uuid__": "aaca81bc-81e1-4095-827e-51d5216b50d7"
+    },
+    "fox_line_20": {
+      "__uuid__": "cf1d2ee8-28d9-4e8d-894b-d11aa8a8cb8b"
+    },
+    "fox_line_21": {
+      "__uuid__": "19776129-feb5-4450-8eb1-b3b06f93b8a2"
+    },
+    "fox_line_22": {
+      "__uuid__": "c9f5f911-af37-4bfc-8249-126599f5b87c"
+    },
+    "fox_line_23": {
+      "__uuid__": "757975e1-87a6-48c9-b275-8a6b89aeaea7"
+    },
+    "fox_line_24": {
+      "__uuid__": "178dd8af-b432-4453-82c3-9755c741d810"
+    },
+    "fox_line_25": {
+      "__uuid__": "9fb906d8-6711-4d8c-8578-5bac4058ff95"
+    },
+    "fox_line_26": {
+      "__uuid__": "8ee958e8-ad5c-42bc-b883-86f5c0aa96d7"
+    },
+    "fox_line_27": {
+      "__uuid__": "7a0f4c6d-2db0-4427-a3eb-5246be1dc74b"
+    },
+    "fox_line_28": {
+      "__uuid__": "1d292f9d-be0c-45a8-a07e-8284ccbdeae5"
+    },
+    "fox_line_03": {
+      "__uuid__": "f96fe3ed-7919-4075-b5d9-8662f387c204"
+    },
+    "fox_line_04": {
+      "__uuid__": "bcc0be0b-a599-4b64-bd9e-6abd351e4e43"
+    },
+    "fox_line_05": {
+      "__uuid__": "bb52354a-2432-4bc3-91c9-f17b86c624c2"
+    },
+    "fox_line_06": {
+      "__uuid__": "9588f690-e27a-4c5b-a1e6-184c0baedb58"
+    },
+    "fox_line_07": {
+      "__uuid__": "111bc20f-5c04-463f-8bbc-06d09bfa5979"
+    },
+    "fox_line_08": {
+      "__uuid__": "b0f7d284-cf43-476c-a900-bc5e5ef83b73"
+    },
+    "fox_line_09": {
+      "__uuid__": "e89f19c5-6291-4848-9fb8-1686555f1a26"
+    },
+    "fox_wrap_00": {
+      "__uuid__": "eded7f88-4e3f-48bf-99a3-2eb38110676e"
+    },
+    "fox_wrap_01": {
+      "__uuid__": "73151b36-9874-4a7c-a790-c4900a5344c6"
+    },
+    "fox_wrap_10": {
+      "__uuid__": "82e23298-e52c-4845-8d0b-5514721746a3"
+    },
+    "fox_wrap_11": {
+      "__uuid__": "f35937d9-4a8f-41bc-8262-6a0bf6200b1d"
+    },
+    "fox_wrap_12": {
+      "__uuid__": "af612b3e-9e3e-40c4-ad30-f3400b86c127"
+    },
+    "fox_wrap_13": {
+      "__uuid__": "cf4e2934-e8de-49a8-996e-b8663bfec524"
+    },
+    "fox_wrap_14": {
+      "__uuid__": "867cf5ae-411b-452f-a606-e50372b4c622"
+    },
+    "fox_wrap_15": {
+      "__uuid__": "cb96b561-404c-422c-b68d-3294965b5822"
+    },
+    "fox_wrap_16": {
+      "__uuid__": "c6f6948f-a2ac-40a2-91b5-6dd910a184b5"
+    },
+    "fox_wrap_17": {
+      "__uuid__": "c4097f1c-05f2-45d9-b707-b37fe117406a"
+    },
+    "fox_wrap_18": {
+      "__uuid__": "b4fd2be5-f6a9-4ae6-aa61-38e585f1bea6"
+    },
+    "fox_wrap_19": {
+      "__uuid__": "84934b3b-037d-4b0d-a336-a4bff4e023ae"
+    },
+    "fox_wrap_02": {
+      "__uuid__": "82f0c62d-8b99-406e-9cad-1561b9002588"
+    },
+    "fox_wrap_20": {
+      "__uuid__": "6ed4d207-a0c9-4da3-a1a1-7657e7288791"
+    },
+    "fox_wrap_21": {
+      "__uuid__": "c92038fa-5b60-4302-b113-f4e50d8c50f9"
+    },
+    "fox_wrap_22": {
+      "__uuid__": "ff636644-922f-4c74-ac95-9abeda78b28f"
+    },
+    "fox_wrap_23": {
+      "__uuid__": "8edc5541-50b3-469f-8e9d-dc159c434f94"
+    },
+    "fox_wrap_24": {
+      "__uuid__": "1d0193e4-54e8-47be-8298-ec8abb0e8616"
+    },
+    "fox_wrap_25": {
+      "__uuid__": "63ee473b-6df7-4f04-8815-9f1c68289bea"
+    },
+    "fox_wrap_26": {
+      "__uuid__": "3889afb3-66fb-422f-9ecc-4025fe7bfb21"
+    },
+    "fox_wrap_27": {
+      "__uuid__": "950bb8be-507d-49c0-bbba-ffb735aed630"
+    },
+    "fox_wrap_28": {
+      "__uuid__": "9630ed7c-2ed4-4268-bdc9-850355ff8203"
+    },
+    "fox_wrap_29": {
+      "__uuid__": "43ba5d9f-2911-4f1c-9d73-9ed7447e8ea7"
+    },
+    "fox_wrap_03": {
+      "__uuid__": "72f4a75a-0f68-4dd7-8f71-4fec688afc09"
+    },
+    "fox_wrap_30": {
+      "__uuid__": "043a9006-308d-4090-aa42-e487f842ec58"
+    },
+    "fox_wrap_31": {
+      "__uuid__": "a7945cbc-465f-42ca-b39a-3df46db5ef73"
+    },
+    "fox_wrap_32": {
+      "__uuid__": "b9152930-1469-44cc-9216-59a6ae38b33f"
+    },
+    "fox_wrap_33": {
+      "__uuid__": "3f3ca100-8140-49f5-aa45-1cf348616924"
+    },
+    "fox_wrap_34": {
+      "__uuid__": "f50ad0f4-bbc1-4c48-8795-216249f37c21"
+    },
+    "fox_wrap_35": {
+      "__uuid__": "9f044b0f-43e4-46e7-a780-8b55fcf720e2"
+    },
+    "fox_wrap_36": {
+      "__uuid__": "e1c439db-5a07-428f-ae14-069fc0406cd1"
+    },
+    "fox_wrap_37": {
+      "__uuid__": "dc7caf5f-eb6b-413a-9815-9320ad3004f4"
+    },
+    "fox_wrap_38": {
+      "__uuid__": "a7c86f43-bf0a-45b1-af37-3094ed83cd98"
+    },
+    "fox_wrap_39": {
+      "__uuid__": "128df19e-a205-47f5-90c5-19e6bbf6b938"
+    },
+    "fox_wrap_04": {
+      "__uuid__": "3cdda3b8-bef6-41d8-9312-3b7ac80a8d05"
+    },
+    "fox_wrap_40": {
+      "__uuid__": "687eeeac-51b4-4a60-96f7-4338e755d987"
+    },
+    "fox_wrap_41": {
+      "__uuid__": "8878812b-4312-44ea-8f57-3420a56a28cb"
+    },
+    "fox_wrap_42": {
+      "__uuid__": "62575001-e9c4-4ba4-9f85-51ca6bbec064"
+    },
+    "fox_wrap_43": {
+      "__uuid__": "8b5e1ce9-93dc-47d4-a206-ec058fc4ea41"
+    },
+    "fox_wrap_44": {
+      "__uuid__": "83ae8acf-53a7-465f-9697-368448ded1dd"
+    },
+    "fox_wrap_45": {
+      "__uuid__": "eda0fa2c-c3c5-42d3-9fa3-d23301aa7160"
+    },
+    "fox_wrap_46": {
+      "__uuid__": "5d70e446-1f03-4970-946e-e22da2de6214"
+    },
+    "fox_wrap_47": {
+      "__uuid__": "5d45ae3d-9366-48a6-8218-6daaa5072fca"
+    },
+    "fox_wrap_48": {
+      "__uuid__": "e79f29fa-04d3-4ef7-a143-6118ed3daee6"
+    },
+    "fox_wrap_05": {
+      "__uuid__": "71e2d396-1d0f-4bde-b851-3de0dbd6c99d"
+    },
+    "fox_wrap_06": {
+      "__uuid__": "e1106f9e-42f8-4579-bddb-d6ec9bfc5a67"
+    },
+    "fox_wrap_07": {
+      "__uuid__": "d0a4703e-563f-4638-8d54-48d8b11359b3"
+    },
+    "fox_wrap_08": {
+      "__uuid__": "9d56021e-6bbd-4812-8595-ad025d5eafbc"
+    },
+    "fox_wrap_09": {
+      "__uuid__": "bc76c2e9-1867-4997-9126-cc2ae8068fab"
+    }
+  }
+}
