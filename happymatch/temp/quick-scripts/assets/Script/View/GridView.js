@@ -26,6 +26,8 @@ cc.Class({
         //    readonly: false,    // optional, default is false
         // },
         // ...
+
+        // 记录所有预设动物元素
         aniPre: {
             default: [],
             type: [cc.Prefab]
@@ -43,7 +45,7 @@ cc.Class({
 
     // use this for initialization
     onLoad: function onLoad() {
-        this.setListener();
+        this.setListener(); // 所有事件监听
         this.lastTouchPos = cc.Vec2(-1, -1);
         this.isCanMove = true;
         this.isInPlayAni = false; // 是否在播放中
@@ -67,13 +69,16 @@ cc.Class({
         }
     },
     setListener: function setListener() {
+        // 添加点击事件
         this.node.on(cc.Node.EventType.TOUCH_START, function (eventTouch) {
             if (this.isInPlayAni) {
                 //播放动画中，不允许点击
                 return true;
             }
+            // 获取点击位置，通过点击位置推出点击元素
             var touchPos = eventTouch.getLocation();
             var cellPos = this.convertTouchPosToCell(touchPos);
+            console.log(touchPos, cellPos);
             if (cellPos) {
                 var changeModels = this.selectCell(cellPos);
                 this.isCanMove = changeModels.length < 3;

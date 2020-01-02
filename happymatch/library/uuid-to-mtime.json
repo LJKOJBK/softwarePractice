@@ -505,8 +505,8 @@
     "relativePath": "Prefabs\\Horse.prefab"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1577327089572,
-    "meta": 1577327089597,
+    "asset": 1577329760226,
+    "meta": 1577329760259,
     "relativePath": "Scene\\Game.fire"
   },
   "4734c20c-0db8-4eb2-92ea-e692f4d70934": {
@@ -520,8 +520,8 @@
     "relativePath": "Script\\Controller"
   },
   "09dc4332-638e-4828-b232-b4d2a0363ad2": {
-    "asset": 1577326746154,
-    "meta": 1577326746191,
+    "asset": 1577933170424,
+    "meta": 1577933170463,
     "relativePath": "Scene\\Login.fire"
   },
   "5ac6422a-d7a9-41aa-b1d9-d36e3a151719": {
@@ -583,11 +583,6 @@
     "asset": 1577322478693,
     "meta": 1555480631000,
     "relativePath": "Texture"
-  },
-  "d0d1f0e3-f6b9-43c7-9414-b4ffb6b68415": {
-    "asset": 1555480631000,
-    "meta": 1577322504629,
-    "relativePath": "Script\\View\\GridView.js"
   },
   "6d2dfd29-7c62-476d-9c1a-1254d4fbef7a": {
     "asset": 1577322478386,
@@ -1008,5 +1003,10 @@
     "asset": 1577327046072,
     "meta": 1577327054069,
     "relativePath": "Script\\Model\\ConstValue.js"
+  },
+  "d0d1f0e3-f6b9-43c7-9414-b4ffb6b68415": {
+    "asset": 1577934902189,
+    "meta": 1577934906373,
+    "relativePath": "Script\\View\\GridView.js"
   }
 }
