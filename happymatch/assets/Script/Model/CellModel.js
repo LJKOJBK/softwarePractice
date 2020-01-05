@@ -37,6 +37,7 @@ export default class CellModel {
         this.status = status;
     }
 
+    // 无效交换位置时，先移动到鼠标拖动的位置，再移回原位置
     moveToAndBack(pos) {
         var srcPos = cc.v2(this.x, this.y);
         this.cmd.push({
@@ -53,8 +54,8 @@ export default class CellModel {
         });
     }
 
+    // 成功移动时，移动到某一个位置
     moveTo(pos, playTime) {
-        var srcPos = cc.v2(this.x, this.y); 
         this.cmd.push({
             action: "moveTo",
             keepTime: ANITIME.TOUCH_MOVE,

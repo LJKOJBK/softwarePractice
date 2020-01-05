@@ -49,16 +49,16 @@ var GameModel = function () {
                 }
             }
 
-            for (var i = 1; i <= _ConstValue.GRID_WIDTH; i++) {
-                for (var j = 1; j <= _ConstValue.GRID_HEIGHT; j++) {
+            for (var _i = 1; _i <= _ConstValue.GRID_WIDTH; _i++) {
+                for (var _j = 1; _j <= _ConstValue.GRID_HEIGHT; _j++) {
                     var result = [];
                     do {
-                        this.cells[i][j].init(this.getRandomCellType());
-                        result = this.checkPoint(j, i)[0];
+                        this.cells[_i][_j].init(this.getRandomCellType());
+                        result = this.checkPoint(_j, _i)[0];
                     } while (result.length > 2);
 
-                    this.cells[i][j].setXY(j, i);
-                    this.cells[i][j].setStartXY(j, i);
+                    this.cells[_i][_j].setXY(_j, _i);
+                    this.cells[_i][_j].setStartXY(_j, _i);
                 }
             }
         }
@@ -151,12 +151,12 @@ var GameModel = function () {
         }
 
         // controller调用的主要入口
-        // 点击某个格子
+        // 点击某个格子，进行格子的移动等效果
 
     }, {
         key: "selectCell",
         value: function selectCell(pos) {
-            this.changeModels = []; // 发生改变的model，将作为返回值，给view播动作
+            this.changeModels = []; // 发生改变的model，将作为返回值，给view播动作 [cell, ...]
             this.effectsQueue = []; // 动物消失，爆炸等特效
             var lastPos = this.lastPos;
             var delta = Math.abs(pos.x - lastPos.x) + Math.abs(pos.y - lastPos.y);
@@ -175,11 +175,12 @@ var GameModel = function () {
             this.curTime = 0; // 动画播放的当前时间
             this.pushToChangeModels(curClickCell);
             this.pushToChangeModels(lastClickCell);
-            var isCanBomb = curClickCell.status != _ConstValue.CELL_STATUS.COMMON && // 判断两个是否是特殊的动物
-            lastClickCell.status != _ConstValue.CELL_STATUS.COMMON || curClickCell.status == _ConstValue.CELL_STATUS.BIRD || lastClickCell.status == _ConstValue.CELL_STATUS.BIRD;
+
+            var isCanBomb = curClickCell.status != _ConstValue.CELL_STATUS.COMMON && lastClickCell.status != _ConstValue.CELL_STATUS.COMMON || curClickCell.status == _ConstValue.CELL_STATUS.BIRD || lastClickCell.status == _ConstValue.CELL_STATUS.BIRD;
+
             if (result1.length < 3 && result2.length < 3 && !isCanBomb) {
-                //不会发生消除的情况
-                this.exchangeCell(lastPos, pos);
+                // 不会发生消除的情况
+                this.exchangeCell(lastPos, pos); // 恢复原来位置
                 curClickCell.moveToAndBack(lastPos);
                 lastClickCell.moveToAndBack(pos);
                 this.lastPos = cc.v2(-1, -1);
@@ -195,22 +196,21 @@ var GameModel = function () {
             }
         }
 
-        // 消除
+        // 消除 @params: [当前位置, 来源位置]
 
     }, {
         key: "processCrush",
         value: function processCrush(checkPoint) {
             var cycleCount = 0;
             while (checkPoint.length > 0) {
-                var bombModels = [];
+                var bombModels = []; // 特殊元素进行爆炸
                 if (cycleCount == 0 && checkPoint.length == 2) {
-                    //特殊消除
+                    // 特殊消除
                     var pos1 = checkPoint[0];
                     var pos2 = checkPoint[1];
                     var model1 = this.cells[pos1.y][pos1.x];
                     var model2 = this.cells[pos2.y][pos2.x];
                     if (model1.status == _ConstValue.CELL_STATUS.BIRD || model2.status == _ConstValue.CELL_STATUS.BIRD) {
-                        var bombModel = null;
                         if (model1.status == _ConstValue.CELL_STATUS.BIRD) {
                             model1.type = model2.type;
                             bombModels.push(model1);
@@ -220,11 +220,10 @@ var GameModel = function () {
                         }
                     }
                 }
+
                 for (var i in checkPoint) {
                     var pos = checkPoint[i];
-                    if (!this.cells[pos.y][pos.x]) {
-                        continue;
-                    }
+                    if (!this.cells[pos.y][pos.x]) continue;
 
                     var _checkPoint = this.checkPoint(pos.x, pos.y),
                         _checkPoint2 = _slicedToArray(_checkPoint, 3),
@@ -232,9 +231,8 @@ var GameModel = function () {
                         newCellStatus = _checkPoint2[1],
                         newCellType = _checkPoint2[2];
 
-                    if (result.length < 3) {
-                        continue;
-                    }
+                    if (result.length < 3) continue;
+
                     for (var j in result) {
                         var model = this.cells[result[j].y][result[j].x];
                         this.crushCell(result[j].x, result[j].y, false, cycleCount);
@@ -272,6 +270,7 @@ var GameModel = function () {
             model.setVisible(this.curTime, true);
             this.changeModels.push(model);
         }
+
         // 下落
 
     }, {
@@ -294,15 +293,15 @@ var GameModel = function () {
                             }
                         }
                         var count = 1;
-                        for (var k = curRow; k <= _ConstValue.GRID_HEIGHT; k++) {
-                            this.cells[k][j] = new _CellModel2.default();
-                            this.cells[k][j].init(this.getRandomCellType());
-                            this.cells[k][j].setStartXY(j, count + _ConstValue.GRID_HEIGHT);
-                            this.cells[k][j].setXY(j, count + _ConstValue.GRID_HEIGHT);
-                            this.cells[k][j].moveTo(cc.v2(j, k), this.curTime);
+                        for (var _k = curRow; _k <= _ConstValue.GRID_HEIGHT; _k++) {
+                            this.cells[_k][j] = new _CellModel2.default();
+                            this.cells[_k][j].init(this.getRandomCellType());
+                            this.cells[_k][j].setStartXY(j, count + _ConstValue.GRID_HEIGHT);
+                            this.cells[_k][j].setXY(j, count + _ConstValue.GRID_HEIGHT);
+                            this.cells[_k][j].moveTo(cc.v2(j, _k), this.curTime);
                             count++;
-                            this.changeModels.push(this.cells[k][j]);
-                            newCheckPoint.push(this.cells[k][j]);
+                            this.changeModels.push(this.cells[_k][j]);
+                            newCheckPoint.push(this.cells[_k][j]);
                         }
                     }
                 }
@@ -332,15 +331,11 @@ var GameModel = function () {
     }, {
         key: "exchangeCell",
         value: function exchangeCell(pos1, pos2) {
-            // [this.cells[pos1.y][pos1.x].x, this.cells[pos1.y][pos1.x].y] = [pos1.x, pos1.y];
-            // this.cells[pos2.y][pos2.x] = tmpModel;
-            // [this.cells[pos2.y][pos2.x].x, this.cells[pos2.y][pos2.x].y] = [pos2.x, pos2.y];
             var _ref = [this.cells[pos2.y][pos2.x], this.cells[pos1.y][pos1.x]];
-            // var tmpModel = this.cells[pos1.y][pos1.x];
-
             this.cells[pos1.y][pos1.x] = _ref[0];
             this.cells[pos2.y][pos2.x] = _ref[1];
         }
+
         // 设置种类
         // Todo 改成乱序算法
 
@@ -354,11 +349,12 @@ var GameModel = function () {
             for (var i = 1; i <= _ConstValue.CELL_BASENUM; i++) {
                 createTypeList.push(i);
             }
-            for (var _i = 0; _i < createTypeList.length; _i++) {
-                var index = Math.floor(Math.random() * (_ConstValue.CELL_BASENUM - _i)) + _i;
-                createTypeList[_i], createTypeList[index] = createTypeList[index], createTypeList[_i];
+            for (var _i2 = 0; _i2 < createTypeList.length; _i2++) {
+                var index = Math.floor(Math.random() * (_ConstValue.CELL_BASENUM - _i2)) + _i2;
+                createTypeList[_i2], createTypeList[index] = createTypeList[index], createTypeList[_i2];
             }
         }
+
         // 随要生成一个类型
 
     }, {
@@ -367,6 +363,7 @@ var GameModel = function () {
             var index = Math.floor(Math.random() * this.cellTypeNum);
             return this.cellCreateType[index];
         }
+
         // TODO bombModels去重
 
     }, {
@@ -378,60 +375,129 @@ var GameModel = function () {
                 var newBombModel = [];
                 var bombTime = _ConstValue.ANITIME.BOMB_DELAY;
                 bombModels.forEach(function (model) {
-                    if (model.status == _ConstValue.CELL_STATUS.LINE) {
-                        for (var i = 1; i <= _ConstValue.GRID_WIDTH; i++) {
+                    switch (model.status) {
+                        case _ConstValue.CELL_STATUS.LINE:
+                            {
+                                for (var i = 1; i <= _ConstValue.GRID_WIDTH; i++) {
+                                    if (this.cells[model.y][i]) {
+                                        if (this.cells[model.y][i].status != _ConstValue.CELL_STATUS.COMMON) {
+                                            newBombModel.push(this.cells[model.y][i]);
+                                        }
+                                        this.crushCell(i, model.y, false, cycleCount);
+                                    }
+                                }
+                                this.addRowBomb(this.curTime, cc.v2(model.x, model.y));
+                                break;
+                            }
+                        case _ConstValue.CELL_STATUS.COLUMN:
+                            {
+                                for (var _i3 = 1; _i3 <= _ConstValue.GRID_HEIGHT; _i3++) {
+                                    if (this.cells[_i3][model.x]) {
+                                        if (this.cells[_i3][model.x].status != _ConstValue.CELL_STATUS.COMMON) {
+                                            newBombModel.push(this.cells[_i3][model.x]);
+                                        }
+                                        this.crushCell(model.x, _i3, false, cycleCount);
+                                    }
+                                }
+                                this.addColBomb(this.curTime, cc.v2(model.x, model.y));
+                                break;
+                            }
+                        case _ConstValue.CELL_STATUS.WRAP:
+                            {
+                                var x = model.x;
+                                var y = model.y;
+                                for (var _i4 = 1; _i4 <= _ConstValue.GRID_HEIGHT; _i4++) {
+                                    for (var j = 1; j <= _ConstValue.GRID_WIDTH; j++) {
+                                        var delta = Math.abs(x - j) + Math.abs(y - _i4);
+                                        if (this.cells[_i4][j] && delta <= 2) {
+                                            if (this.cells[_i4][j].status != _ConstValue.CELL_STATUS.COMMON) {
+                                                newBombModel.push(this.cells[_i4][j]);
+                                            }
+                                            this.crushCell(j, _i4, false, cycleCount);
+                                        }
+                                    }
+                                }
+                                break;
+                            }
+                        case _ConstValue.CELL_STATUS.BIRD:
+                            {
+                                var crushType = model.type;
+                                if (bombTime < _ConstValue.ANITIME.BOMB_BIRD_DELAY) {
+                                    bombTime = _ConstValue.ANITIME.BOMB_BIRD_DELAY;
+                                }
+                                if (crushType == _ConstValue.CELL_TYPE.BIRD) {
+                                    crushType = this.getRandomCellType();
+                                }
+                                for (var _i5 = 1; _i5 <= _ConstValue.GRID_HEIGHT; _i5++) {
+                                    for (var _j2 = 1; _j2 <= _ConstValue.GRID_WIDTH; _j2++) {
+                                        if (this.cells[_i5][_j2] && this.cells[_i5][_j2].type == crushType) {
+                                            if (this.cells[_i5][_j2].status != _ConstValue.CELL_STATUS.COMMON) {
+                                                newBombModel.push(this.cells[_i5][_j2]);
+                                            }
+                                            this.crushCell(_j2, _i5, true, cycleCount);
+                                        }
+                                    }
+                                }
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+
+                    /*if (model.status == CELL_STATUS.LINE) {
+                        for (let i = 1; i <= GRID_WIDTH; i++) {
                             if (this.cells[model.y][i]) {
-                                if (this.cells[model.y][i].status != _ConstValue.CELL_STATUS.COMMON) {
+                                if (this.cells[model.y][i].status != CELL_STATUS.COMMON) {
                                     newBombModel.push(this.cells[model.y][i]);
                                 }
                                 this.crushCell(i, model.y, false, cycleCount);
                             }
                         }
                         this.addRowBomb(this.curTime, cc.v2(model.x, model.y));
-                    } else if (model.status == _ConstValue.CELL_STATUS.COLUMN) {
-                        for (var _i2 = 1; _i2 <= _ConstValue.GRID_HEIGHT; _i2++) {
-                            if (this.cells[_i2][model.x]) {
-                                if (this.cells[_i2][model.x].status != _ConstValue.CELL_STATUS.COMMON) {
-                                    newBombModel.push(this.cells[_i2][model.x]);
+                    } else if (model.status == CELL_STATUS.COLUMN) {
+                        for (let i = 1; i <= GRID_HEIGHT; i++) {
+                            if (this.cells[i][model.x]) {
+                                if (this.cells[i][model.x].status != CELL_STATUS.COMMON) {
+                                    newBombModel.push(this.cells[i][model.x]);
                                 }
-                                this.crushCell(model.x, _i2, false, cycleCount);
+                                this.crushCell(model.x, i, false, cycleCount);
                             }
                         }
                         this.addColBomb(this.curTime, cc.v2(model.x, model.y));
-                    } else if (model.status == _ConstValue.CELL_STATUS.WRAP) {
-                        var x = model.x;
-                        var y = model.y;
-                        for (var _i3 = 1; _i3 <= _ConstValue.GRID_HEIGHT; _i3++) {
-                            for (var j = 1; j <= _ConstValue.GRID_WIDTH; j++) {
-                                var delta = Math.abs(x - j) + Math.abs(y - _i3);
-                                if (this.cells[_i3][j] && delta <= 2) {
-                                    if (this.cells[_i3][j].status != _ConstValue.CELL_STATUS.COMMON) {
-                                        newBombModel.push(this.cells[_i3][j]);
+                    } else if (model.status == CELL_STATUS.WRAP) {
+                        let x = model.x;
+                        let y = model.y;
+                        for (let i = 1; i <= GRID_HEIGHT; i++) {
+                            for (let j = 1; j <= GRID_WIDTH; j++) {
+                                let delta = Math.abs(x - j) + Math.abs(y - i);
+                                if (this.cells[i][j] && delta <= 2) {
+                                    if (this.cells[i][j].status != CELL_STATUS.COMMON) {
+                                        newBombModel.push(this.cells[i][j]);
                                     }
-                                    this.crushCell(j, _i3, false, cycleCount);
+                                    this.crushCell(j, i, false, cycleCount);
                                 }
                             }
                         }
-                    } else if (model.status == _ConstValue.CELL_STATUS.BIRD) {
-                        var crushType = model.type;
-                        if (bombTime < _ConstValue.ANITIME.BOMB_BIRD_DELAY) {
-                            bombTime = _ConstValue.ANITIME.BOMB_BIRD_DELAY;
+                    } else if (model.status == CELL_STATUS.BIRD) {
+                        let crushType = model.type
+                        if (bombTime < ANITIME.BOMB_BIRD_DELAY) {
+                            bombTime = ANITIME.BOMB_BIRD_DELAY;
                         }
-                        if (crushType == _ConstValue.CELL_TYPE.BIRD) {
+                        if (crushType == CELL_TYPE.BIRD) {
                             crushType = this.getRandomCellType();
                         }
-                        for (var _i4 = 1; _i4 <= _ConstValue.GRID_HEIGHT; _i4++) {
-                            for (var _j = 1; _j <= _ConstValue.GRID_WIDTH; _j++) {
-                                if (this.cells[_i4][_j] && this.cells[_i4][_j].type == crushType) {
-                                    if (this.cells[_i4][_j].status != _ConstValue.CELL_STATUS.COMMON) {
-                                        newBombModel.push(this.cells[_i4][_j]);
+                        for (let i = 1; i <= GRID_HEIGHT; i++) {
+                            for (let j = 1; j <= GRID_WIDTH; j++) {
+                                if (this.cells[i][j] && this.cells[i][j].type == crushType) {
+                                    if (this.cells[i][j].status != CELL_STATUS.COMMON) {
+                                        newBombModel.push(this.cells[i][j]);
                                     }
-                                    this.crushCell(_j, _i4, true, cycleCount);
+                                    this.crushCell(j, i, true, cycleCount);
                                 }
                             }
                         }
                         //this.crushCell(model.x, model.y);
-                    }
+                    }*/
                 }, _this);
                 if (bombModels.length > 0) {
                     _this.curTime += bombTime;
