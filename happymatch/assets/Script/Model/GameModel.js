@@ -3,13 +3,14 @@ import { CELL_TYPE, CELL_BASENUM, CELL_STATUS, GRID_WIDTH, GRID_HEIGHT, ANITIME 
 
 export default class GameModel {
     constructor() {
-        this.cells = null;
+        this.cells = null;      // 记录grid上所有的格子的数组
         this.cellBgs = null;
         this.lastPos = cc.v2(-1, -1);
-        this.cellTypeNum = 5;
-        this.cellCreateType = []; // 升成种类只在这个数组里面查找
+        this.cellTypeNum = 5;   // 默认动物数
+        this.cellCreateType = []; // 生成动物的种类，如有4种动物，数组为[1, 2, 3, 4]
     }
 
+    // 初始化所有的格子
     init(cellTypeNum) {
         this.cells = [];
         this.setCellTypeNum(cellTypeNum || this.cellTypeNum);
@@ -22,17 +23,14 @@ export default class GameModel {
 
         for (var i = 1; i <= GRID_WIDTH; i++) {
             for (var j = 1; j <= GRID_HEIGHT; j++) {
-                let flag = true;
-                while (flag) {
-                    flag = false;
+                let result = []
+                do {
                     this.cells[i][j].init(this.getRandomCellType());
-                    let result = this.checkPoint(j, i)[0];
-                    if (result.length > 2) {
-                        flag = true;
-                    }
-                    this.cells[i][j].setXY(j, i);
-                    this.cells[i][j].setStartXY(j, i);
-                }
+                    result = this.checkPoint(j, i)[0];
+                } while(result.length > 2);
+
+                this.cells[i][j].setXY(j, i);
+                this.cells[i][j].setStartXY(j, i);
             }
         }
 
@@ -43,16 +41,17 @@ export default class GameModel {
     }
 
     checkPoint(x, y) {
+        // 给定一个坐标和要检查的方向，返回方向上包括自己在内同类元素的坐标  @returns: [cc.v2(), ...]
         let checkWithDirection = function (x, y, direction) {
             let queue = [];
-            let vis = [];
+            let vis = [];   // 如果当前格子已被遍历过设为true
             vis[x + y * 9] = true;
             queue.push(cc.v2(x, y));
             let front = 0;
             while (front < queue.length) {
                 //let direction = [cc.v2(0, -1), cc.v2(0, 1), cc.v2(1, 0), cc.v2(-1, 0)];
                 let point = queue[front];
-                let cellModel = this.cells[point.y][point.x];
+                let cellModel = this.cells[point.y][point.x];   // 当前要检测的格子
                 front++;
                 if (!cellModel) {
                     continue;
@@ -60,7 +59,7 @@ export default class GameModel {
                 for (let i = 0; i < direction.length; i++) {
                     let tmpX = point.x + direction[i].x;
                     let tmpY = point.y + direction[i].y;
-                    if (tmpX < 1 || tmpX > 9
+                    if (tmpX < 1 || tmpX > 9    // 不合理的位置
                         || tmpY < 1 || tmpY > 9
                         || vis[tmpX + tmpY * 9]
                         || !this.cells[tmpY][tmpX]) {
@@ -74,22 +73,20 @@ export default class GameModel {
             }
             return queue;
         }
-        let rowResult = checkWithDirection.call(this, x, y, [cc.v2(1, 0), cc.v2(-1, 0)]);
-        let colResult = checkWithDirection.call(this, x, y, [cc.v2(0, -1), cc.v2(0, 1)]);
+        let rowResult = checkWithDirection.call(this, x, y, [cc.v2(1, 0), cc.v2(-1, 0)]);   // 同一行相同个数
+        let colResult = checkWithDirection.call(this, x, y, [cc.v2(0, -1), cc.v2(0, 1)]);   // 同一列相同个数
         let result = [];
         let newCellStatus = "";
         if (rowResult.length >= 5 || colResult.length >= 5) {
-            newCellStatus = CELL_STATUS.BIRD;
+            newCellStatus = CELL_STATUS.BIRD;   // 行列有超过五个生成魔力鸟（种类消除）
+        } else if (rowResult.length >= 3 && colResult.length >= 3) {
+            newCellStatus = CELL_STATUS.WRAP;   // 行列同时超过三个生成区域消除
+        } else if (rowResult.length >= 4) {
+            newCellStatus = CELL_STATUS.LINE;   // 生成行消除
+        } else if (colResult.length >= 4) {
+            newCellStatus = CELL_STATUS.COLUMN; // 生成列消除
         }
-        else if (rowResult.length >= 3 && colResult.length >= 3) {
-            newCellStatus = CELL_STATUS.WRAP;
-        }
-        else if (rowResult.length >= 4) {
-            newCellStatus = CELL_STATUS.LINE;
-        }
-        else if (colResult.length >= 4) {
-            newCellStatus = CELL_STATUS.COLUMN;
-        }
+
         if (rowResult.length >= 3) {
             result = rowResult;
         }
@@ -123,6 +120,7 @@ export default class GameModel {
     getCells() {
         return this.cells;
     }
+
     // controller调用的主要入口
     // 点击某个格子
     selectCell(pos) {
@@ -130,13 +128,15 @@ export default class GameModel {
         this.effectsQueue = []; // 动物消失，爆炸等特效
         var lastPos = this.lastPos;
         var delta = Math.abs(pos.x - lastPos.x) + Math.abs(pos.y - lastPos.y);
-        if (delta != 1) { //非相邻格子， 直接返回
+        
+        if (delta != 1) { // 非相邻格子，直接返回
             this.lastPos = pos;
             return [[], []];
         }
-        let curClickCell = this.cells[pos.y][pos.x]; //当前点击的格子
-        let lastClickCell = this.cells[lastPos.y][lastPos.x]; // 上一次点击的格式
-        this.exchangeCell(lastPos, pos);
+        let curClickCell = this.cells[pos.y][pos.x]; // 获取当前点击的格子
+        let lastClickCell = this.cells[lastPos.y][lastPos.x]; // 上一次点击的格子
+        this.exchangeCell(lastPos, pos);    // 两个格子进行交换
+
         var result1 = this.checkPoint(pos.x, pos.y)[0];
         var result2 = this.checkPoint(lastPos.x, lastPos.y)[0];
         this.curTime = 0; // 动画播放的当前时间
@@ -163,6 +163,7 @@ export default class GameModel {
             return [this.changeModels, this.effectsQueue];
         }
     }
+
     // 消除
     processCrush(checkPoint) {
         let cycleCount = 0;
@@ -286,14 +287,9 @@ export default class GameModel {
     }
 
     exchangeCell(pos1, pos2) {
-        var tmpModel = this.cells[pos1.y][pos1.x];
-        this.cells[pos1.y][pos1.x] = this.cells[pos2.y][pos2.x];
-        this.cells[pos1.y][pos1.x].x = pos1.x;
-        this.cells[pos1.y][pos1.x].y = pos1.y;
-        this.cells[pos2.y][pos2.x] = tmpModel;
-        this.cells[pos2.y][pos2.x].x = pos2.x;
-        this.cells[pos2.y][pos2.x].y = pos2.y;
+        [this.cells[pos1.y][pos1.x], this.cells[pos2.y][pos2.x]] = [this.cells[pos2.y][pos2.x], this.cells[pos1.y][pos1.x]];
     }
+    
     // 设置种类
     // Todo 改成乱序算法
     setCellTypeNum(num) {

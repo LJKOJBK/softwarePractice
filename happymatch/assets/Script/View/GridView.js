@@ -67,12 +67,11 @@ cc.Class({
             }
             // 获取点击位置，通过点击位置推出点击元素
             var touchPos = eventTouch.getLocation();
-            var cellPos = this.convertTouchPosToCell(touchPos);
+            var cellPos = this.convertTouchPosToCell(touchPos); // 点击的实际像素位置到格子坐标位置
             if (cellPos) {
                 var changeModels = this.selectCell(cellPos);
                 this.isCanMove = changeModels.length < 3;
-            }
-            else {
+            } else {
                 this.isCanMove = false;
             }
             return true;
@@ -90,14 +89,8 @@ cc.Class({
                 }
             }
         }, this);
-        this.node.on(cc.Node.EventType.TOUCH_END, function (eventTouch) {
-            // console.log("1111");
-        }, this);
-        this.node.on(cc.Node.EventType.TOUCH_CANCEL, function (eventTouch) {
-            // console.log("1111");
-        }, this);
     },
-    // 根据点击的像素位置，转换成网格中的位置
+    // 根据点击的像素位置，转换成网格中的位置(数学中的二维坐标轴)
     convertTouchPosToCell: function (pos) {
         pos = this.node.convertToNodeSpace(pos);
         if (pos.x < 0 || pos.x >= GRID_PIXEL_WIDTH || pos.y < 0 || pos.y >= GRID_PIXEL_HEIGHT) {

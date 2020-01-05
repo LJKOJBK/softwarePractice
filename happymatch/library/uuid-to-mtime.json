@@ -524,30 +524,15 @@
     "meta": 1578193244998,
     "relativePath": "Scene\\Login.fire"
   },
-  "5ac6422a-d7a9-41aa-b1d9-d36e3a151719": {
-    "asset": 1578193214721,
-    "meta": 1578193245051,
-    "relativePath": "Script\\Controller\\GameController.js"
-  },
   "04ace91c-a992-4ded-881b-d68c7a412af6": {
     "asset": 1578193214725,
     "meta": 1578193214723,
     "relativePath": "Script\\Model"
   },
-  "dae88182-7af0-4c68-aee5-42a86e99ef06": {
-    "asset": 1578193214723,
-    "meta": 1578193245163,
-    "relativePath": "Script\\Model\\CellModel.js"
-  },
   "a882f68a-d7b5-4339-9cd7-7f03d63e80d8": {
     "asset": 1578193214726,
     "meta": 1578193214726,
     "relativePath": "Script\\UnitTest"
-  },
-  "cc4421da-3250-44fd-92a2-ed6fd850ac1d": {
-    "asset": 1578193214725,
-    "meta": 1578193245482,
-    "relativePath": "Script\\Model\\GameModel.js"
   },
   "2b1eb16c-4ee7-4181-8db6-d3ec21e4030c": {
     "asset": 1578193214729,
@@ -999,14 +984,29 @@
     "meta": 1578193245126,
     "relativePath": "Script\\Controller\\LoginController.js"
   },
+  "5ac6422a-d7a9-41aa-b1d9-d36e3a151719": {
+    "asset": 1578195779944,
+    "meta": 1578195791388,
+    "relativePath": "Script\\Controller\\GameController.js"
+  },
+  "dae88182-7af0-4c68-aee5-42a86e99ef06": {
+    "asset": 1578195779945,
+    "meta": 1578195791398,
+    "relativePath": "Script\\Model\\CellModel.js"
+  },
   "f90887ac-19b3-41b4-998d-689b33d06ab8": {
-    "asset": 1578193214724,
-    "meta": 1578193245456,
+    "asset": 1578198371361,
+    "meta": 1578206532817,
     "relativePath": "Script\\Model\\ConstValue.js"
   },
   "d0d1f0e3-f6b9-43c7-9414-b4ffb6b68415": {
-    "asset": 1578193214732,
-    "meta": 1578193245580,
+    "asset": 1578209416983,
+    "meta": 1578209429543,
     "relativePath": "Script\\View\\GridView.js"
+  },
+  "cc4421da-3250-44fd-92a2-ed6fd850ac1d": {
+    "asset": 1578210277489,
+    "meta": 1578210282487,
+    "relativePath": "Script\\Model\\GameModel.js"
   }
 }

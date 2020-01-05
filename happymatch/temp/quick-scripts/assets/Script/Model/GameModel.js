@@ -27,12 +27,15 @@ var GameModel = function () {
     function GameModel() {
         _classCallCheck(this, GameModel);
 
-        this.cells = null;
+        this.cells = null; // 记录grid上所有的格子的数组
         this.cellBgs = null;
         this.lastPos = cc.v2(-1, -1);
-        this.cellTypeNum = 5;
-        this.cellCreateType = []; // 升成种类只在这个数组里面查找
+        this.cellTypeNum = 5; // 默认动物数
+        this.cellCreateType = []; // 生成动物的种类，如有4种动物，数组为[1, 2, 3, 4]
     }
+
+    // 初始化所有的格子
+
 
     _createClass(GameModel, [{
         key: "init",
@@ -48,17 +51,14 @@ var GameModel = function () {
 
             for (var i = 1; i <= _ConstValue.GRID_WIDTH; i++) {
                 for (var j = 1; j <= _ConstValue.GRID_HEIGHT; j++) {
-                    var flag = true;
-                    while (flag) {
-                        flag = false;
+                    var result = [];
+                    do {
                         this.cells[i][j].init(this.getRandomCellType());
-                        var result = this.checkPoint(j, i)[0];
-                        if (result.length > 2) {
-                            flag = true;
-                        }
-                        this.cells[i][j].setXY(j, i);
-                        this.cells[i][j].setStartXY(j, i);
-                    }
+                        result = this.checkPoint(j, i)[0];
+                    } while (result.length > 2);
+
+                    this.cells[i][j].setXY(j, i);
+                    this.cells[i][j].setStartXY(j, i);
                 }
             }
         }
@@ -70,16 +70,17 @@ var GameModel = function () {
     }, {
         key: "checkPoint",
         value: function checkPoint(x, y) {
+            // 给定一个坐标和要检查的方向，返回方向上包括自己在内同类元素的坐标  @returns: [cc.v2(), ...]
             var checkWithDirection = function checkWithDirection(x, y, direction) {
                 var queue = [];
-                var vis = [];
+                var vis = []; // 如果当前格子已被遍历过设为true
                 vis[x + y * 9] = true;
                 queue.push(cc.v2(x, y));
                 var front = 0;
                 while (front < queue.length) {
                     //let direction = [cc.v2(0, -1), cc.v2(0, 1), cc.v2(1, 0), cc.v2(-1, 0)];
                     var point = queue[front];
-                    var cellModel = this.cells[point.y][point.x];
+                    var cellModel = this.cells[point.y][point.x]; // 当前要检测的格子
                     front++;
                     if (!cellModel) {
                         continue;
@@ -87,7 +88,8 @@ var GameModel = function () {
                     for (var i = 0; i < direction.length; i++) {
                         var tmpX = point.x + direction[i].x;
                         var tmpY = point.y + direction[i].y;
-                        if (tmpX < 1 || tmpX > 9 || tmpY < 1 || tmpY > 9 || vis[tmpX + tmpY * 9] || !this.cells[tmpY][tmpX]) {
+                        if (tmpX < 1 || tmpX > 9 // 不合理的位置
+                        || tmpY < 1 || tmpY > 9 || vis[tmpX + tmpY * 9] || !this.cells[tmpY][tmpX]) {
                             continue;
                         }
                         if (cellModel.type == this.cells[tmpY][tmpX].type) {
@@ -98,19 +100,20 @@ var GameModel = function () {
                 }
                 return queue;
             };
-            var rowResult = checkWithDirection.call(this, x, y, [cc.v2(1, 0), cc.v2(-1, 0)]);
-            var colResult = checkWithDirection.call(this, x, y, [cc.v2(0, -1), cc.v2(0, 1)]);
+            var rowResult = checkWithDirection.call(this, x, y, [cc.v2(1, 0), cc.v2(-1, 0)]); // 同一行相同个数
+            var colResult = checkWithDirection.call(this, x, y, [cc.v2(0, -1), cc.v2(0, 1)]); // 同一列相同个数
             var result = [];
             var newCellStatus = "";
             if (rowResult.length >= 5 || colResult.length >= 5) {
-                newCellStatus = _ConstValue.CELL_STATUS.BIRD;
+                newCellStatus = _ConstValue.CELL_STATUS.BIRD; // 行列有超过五个生成魔力鸟（种类消除）
             } else if (rowResult.length >= 3 && colResult.length >= 3) {
-                newCellStatus = _ConstValue.CELL_STATUS.WRAP;
+                newCellStatus = _ConstValue.CELL_STATUS.WRAP; // 行列同时超过三个生成区域消除
             } else if (rowResult.length >= 4) {
-                newCellStatus = _ConstValue.CELL_STATUS.LINE;
+                newCellStatus = _ConstValue.CELL_STATUS.LINE; // 生成行消除
             } else if (colResult.length >= 4) {
-                newCellStatus = _ConstValue.CELL_STATUS.COLUMN;
+                newCellStatus = _ConstValue.CELL_STATUS.COLUMN; // 生成列消除
             }
+
             if (rowResult.length >= 3) {
                 result = rowResult;
             }
@@ -146,6 +149,7 @@ var GameModel = function () {
         value: function getCells() {
             return this.cells;
         }
+
         // controller调用的主要入口
         // 点击某个格子
 
@@ -156,14 +160,16 @@ var GameModel = function () {
             this.effectsQueue = []; // 动物消失，爆炸等特效
             var lastPos = this.lastPos;
             var delta = Math.abs(pos.x - lastPos.x) + Math.abs(pos.y - lastPos.y);
+
             if (delta != 1) {
-                //非相邻格子， 直接返回
+                // 非相邻格子，直接返回
                 this.lastPos = pos;
                 return [[], []];
             }
-            var curClickCell = this.cells[pos.y][pos.x]; //当前点击的格子
-            var lastClickCell = this.cells[lastPos.y][lastPos.x]; // 上一次点击的格式
-            this.exchangeCell(lastPos, pos);
+            var curClickCell = this.cells[pos.y][pos.x]; // 获取当前点击的格子
+            var lastClickCell = this.cells[lastPos.y][lastPos.x]; // 上一次点击的格子
+            this.exchangeCell(lastPos, pos); // 两个格子进行交换
+
             var result1 = this.checkPoint(pos.x, pos.y)[0];
             var result2 = this.checkPoint(lastPos.x, lastPos.y)[0];
             this.curTime = 0; // 动画播放的当前时间
@@ -188,6 +194,7 @@ var GameModel = function () {
                 return [this.changeModels, this.effectsQueue];
             }
         }
+
         // 消除
 
     }, {
@@ -325,13 +332,14 @@ var GameModel = function () {
     }, {
         key: "exchangeCell",
         value: function exchangeCell(pos1, pos2) {
-            var tmpModel = this.cells[pos1.y][pos1.x];
-            this.cells[pos1.y][pos1.x] = this.cells[pos2.y][pos2.x];
-            this.cells[pos1.y][pos1.x].x = pos1.x;
-            this.cells[pos1.y][pos1.x].y = pos1.y;
-            this.cells[pos2.y][pos2.x] = tmpModel;
-            this.cells[pos2.y][pos2.x].x = pos2.x;
-            this.cells[pos2.y][pos2.x].y = pos2.y;
+            // [this.cells[pos1.y][pos1.x].x, this.cells[pos1.y][pos1.x].y] = [pos1.x, pos1.y];
+            // this.cells[pos2.y][pos2.x] = tmpModel;
+            // [this.cells[pos2.y][pos2.x].x, this.cells[pos2.y][pos2.x].y] = [pos2.x, pos2.y];
+            var _ref = [this.cells[pos2.y][pos2.x], this.cells[pos1.y][pos1.x]];
+            // var tmpModel = this.cells[pos1.y][pos1.x];
+
+            this.cells[pos1.y][pos1.x] = _ref[0];
+            this.cells[pos2.y][pos2.x] = _ref[1];
         }
         // 设置种类
         // Todo 改成乱序算法

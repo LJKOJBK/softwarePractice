@@ -1,13 +1,16 @@
-
+/* 
+    状态Status包括： 魔力鸟（同类消除）、区域消除、行消除、列消除
+    种类是各种动物的样式
+*/
 export const CELL_TYPE = {
     EMPTY : 0,
-    A : 1,
+    A : 1,      // 六种动物
     B : 2,
     C : 3,
     D : 4,
     E : 5,
     F : 6,
-    BIRD : 7
+    BIRD : 7    // 魔力鸟
 }
 export const CELL_BASENUM = 6;
 export const CELL_STATUS = {
