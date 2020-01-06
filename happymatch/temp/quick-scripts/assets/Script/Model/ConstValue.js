@@ -7,15 +7,19 @@ cc._RF.push(module, 'f9088esGbNBtJmNaJsz0Gq4', 'ConstValue', __filename);
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+/* 
+    状态Status包括： 魔力鸟（同类消除）、区域消除、行消除、列消除
+    种类是各种动物的样式
+*/
 var CELL_TYPE = exports.CELL_TYPE = {
     EMPTY: 0,
-    A: 1,
+    A: 1, // 六种动物
     B: 2,
     C: 3,
     D: 4,
     E: 5,
     F: 6,
-    BIRD: 7
+    BIRD: 7 // 魔力鸟
 };
 var CELL_BASENUM = exports.CELL_BASENUM = 6;
 var CELL_STATUS = exports.CELL_STATUS = {

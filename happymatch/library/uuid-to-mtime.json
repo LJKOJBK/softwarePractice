@@ -524,30 +524,15 @@
     "meta": 1577933170463,
     "relativePath": "Scene\\Login.fire"
   },
-  "5ac6422a-d7a9-41aa-b1d9-d36e3a151719": {
-    "asset": 1555480631000,
-    "meta": 1577322504008,
-    "relativePath": "Script\\Controller\\GameController.js"
-  },
   "04ace91c-a992-4ded-881b-d68c7a412af6": {
     "asset": 1577322478252,
     "meta": 1555480631000,
     "relativePath": "Script\\Model"
   },
-  "dae88182-7af0-4c68-aee5-42a86e99ef06": {
-    "asset": 1555480631000,
-    "meta": 1577322504132,
-    "relativePath": "Script\\Model\\CellModel.js"
-  },
   "a882f68a-d7b5-4339-9cd7-7f03d63e80d8": {
     "asset": 1577322478263,
     "meta": 1555480631000,
     "relativePath": "Script\\UnitTest"
-  },
-  "cc4421da-3250-44fd-92a2-ed6fd850ac1d": {
-    "asset": 1555480631000,
-    "meta": 1577322504440,
-    "relativePath": "Script\\Model\\GameModel.js"
   },
   "2b1eb16c-4ee7-4181-8db6-d3ec21e4030c": {
     "asset": 1577322478275,
@@ -568,11 +553,6 @@
     "asset": 1555480631000,
     "meta": 1577322504496,
     "relativePath": "Script\\Utils\\AudioUtils.js"
-  },
-  "fbf190b1-e29b-4557-ad94-67bfaa249a50": {
-    "asset": 1555480631000,
-    "meta": 1577322504573,
-    "relativePath": "Script\\View\\CellView.js"
   },
   "0e9259b2-9f47-488e-a75a-a354e98a917d": {
     "asset": 1555480631000,
@@ -999,14 +979,34 @@
     "meta": 1577326740137,
     "relativePath": "Script\\Controller\\LoginController.js"
   },
+  "5ac6422a-d7a9-41aa-b1d9-d36e3a151719": {
+    "asset": 1578272989879,
+    "meta": 1578273109426,
+    "relativePath": "Script\\Controller\\GameController.js"
+  },
+  "dae88182-7af0-4c68-aee5-42a86e99ef06": {
+    "asset": 1578273002044,
+    "meta": 1578273109473,
+    "relativePath": "Script\\Model\\CellModel.js"
+  },
   "f90887ac-19b3-41b4-998d-689b33d06ab8": {
-    "asset": 1577327046072,
-    "meta": 1577327054069,
+    "asset": 1578273002046,
+    "meta": 1578273111253,
     "relativePath": "Script\\Model\\ConstValue.js"
   },
+  "cc4421da-3250-44fd-92a2-ed6fd850ac1d": {
+    "asset": 1578273002049,
+    "meta": 1578273111561,
+    "relativePath": "Script\\Model\\GameModel.js"
+  },
+  "fbf190b1-e29b-4557-ad94-67bfaa249a50": {
+    "asset": 1578272989888,
+    "meta": 1578273111747,
+    "relativePath": "Script\\View\\CellView.js"
+  },
   "d0d1f0e3-f6b9-43c7-9414-b4ffb6b68415": {
-    "asset": 1577934902189,
-    "meta": 1577934906373,
+    "asset": 1578273162702,
+    "meta": 1578273167105,
     "relativePath": "Script\\View\\GridView.js"
   }
 }

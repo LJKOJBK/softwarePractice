@@ -62,6 +62,9 @@ var CellModel = function () {
         value: function setStatus(status) {
             this.status = status;
         }
+
+        // 无效交换位置时，先移动到鼠标拖动的位置，再移回原位置
+
     }, {
         key: "moveToAndBack",
         value: function moveToAndBack(pos) {
@@ -79,10 +82,12 @@ var CellModel = function () {
                 pos: srcPos
             });
         }
+
+        // 成功移动时，移动到某一个位置
+
     }, {
         key: "moveTo",
         value: function moveTo(pos, playTime) {
-            var srcPos = cc.v2(this.x, this.y);
             this.cmd.push({
                 action: "moveTo",
                 keepTime: _ConstValue.ANITIME.TOUCH_MOVE,

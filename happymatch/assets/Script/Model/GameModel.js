@@ -3,36 +3,34 @@ import { CELL_TYPE, CELL_BASENUM, CELL_STATUS, GRID_WIDTH, GRID_HEIGHT, ANITIME 
 
 export default class GameModel {
     constructor() {
-        this.cells = null;
+        this.cells = null;      // 记录grid上所有的格子的数组
         this.cellBgs = null;
         this.lastPos = cc.v2(-1, -1);
-        this.cellTypeNum = 5;
-        this.cellCreateType = []; // 升成种类只在这个数组里面查找
+        this.cellTypeNum = 5;   // 默认动物数
+        this.cellCreateType = []; // 生成动物的种类，如有4种动物，数组为[1, 2, 3, 4]
     }
 
+    // 初始化所有的格子
     init(cellTypeNum) {
         this.cells = [];
         this.setCellTypeNum(cellTypeNum || this.cellTypeNum);
-        for (var i = 1; i <= GRID_WIDTH; i++) {
+        for (let i = 1; i <= GRID_WIDTH; i++) {
             this.cells[i] = [];
-            for (var j = 1; j <= GRID_HEIGHT; j++) {
+            for (let j = 1; j <= GRID_HEIGHT; j++) {
                 this.cells[i][j] = new CellModel();
             }
         }
 
-        for (var i = 1; i <= GRID_WIDTH; i++) {
-            for (var j = 1; j <= GRID_HEIGHT; j++) {
-                let flag = true;
-                while (flag) {
-                    flag = false;
+        for (let i = 1; i <= GRID_WIDTH; i++) {
+            for (let j = 1; j <= GRID_HEIGHT; j++) {
+                let result = []
+                do {
                     this.cells[i][j].init(this.getRandomCellType());
-                    let result = this.checkPoint(j, i)[0];
-                    if (result.length > 2) {
-                        flag = true;
-                    }
-                    this.cells[i][j].setXY(j, i);
-                    this.cells[i][j].setStartXY(j, i);
-                }
+                    result = this.checkPoint(j, i)[0];
+                } while(result.length > 2);
+
+                this.cells[i][j].setXY(j, i);
+                this.cells[i][j].setStartXY(j, i);
             }
         }
 
@@ -43,16 +41,17 @@ export default class GameModel {
     }
 
     checkPoint(x, y) {
+        // 给定一个坐标和要检查的方向，返回方向上包括自己在内同类元素的坐标  @returns: [cc.v2(), ...]
         let checkWithDirection = function (x, y, direction) {
             let queue = [];
-            let vis = [];
+            let vis = [];   // 如果当前格子已被遍历过设为true
             vis[x + y * 9] = true;
             queue.push(cc.v2(x, y));
             let front = 0;
             while (front < queue.length) {
                 //let direction = [cc.v2(0, -1), cc.v2(0, 1), cc.v2(1, 0), cc.v2(-1, 0)];
                 let point = queue[front];
-                let cellModel = this.cells[point.y][point.x];
+                let cellModel = this.cells[point.y][point.x];   // 当前要检测的格子
                 front++;
                 if (!cellModel) {
                     continue;
@@ -60,7 +59,7 @@ export default class GameModel {
                 for (let i = 0; i < direction.length; i++) {
                     let tmpX = point.x + direction[i].x;
                     let tmpY = point.y + direction[i].y;
-                    if (tmpX < 1 || tmpX > 9
+                    if (tmpX < 1 || tmpX > 9    // 不合理的位置
                         || tmpY < 1 || tmpY > 9
                         || vis[tmpX + tmpY * 9]
                         || !this.cells[tmpY][tmpX]) {
@@ -74,22 +73,20 @@ export default class GameModel {
             }
             return queue;
         }
-        let rowResult = checkWithDirection.call(this, x, y, [cc.v2(1, 0), cc.v2(-1, 0)]);
-        let colResult = checkWithDirection.call(this, x, y, [cc.v2(0, -1), cc.v2(0, 1)]);
+        let rowResult = checkWithDirection.call(this, x, y, [cc.v2(1, 0), cc.v2(-1, 0)]);   // 同一行相同个数
+        let colResult = checkWithDirection.call(this, x, y, [cc.v2(0, -1), cc.v2(0, 1)]);   // 同一列相同个数
         let result = [];
         let newCellStatus = "";
         if (rowResult.length >= 5 || colResult.length >= 5) {
-            newCellStatus = CELL_STATUS.BIRD;
+            newCellStatus = CELL_STATUS.BIRD;   // 行列有超过五个生成魔力鸟（种类消除）
+        } else if (rowResult.length >= 3 && colResult.length >= 3) {
+            newCellStatus = CELL_STATUS.WRAP;   // 行列同时超过三个生成区域消除
+        } else if (rowResult.length >= 4) {
+            newCellStatus = CELL_STATUS.LINE;   // 生成行消除
+        } else if (colResult.length >= 4) {
+            newCellStatus = CELL_STATUS.COLUMN; // 生成列消除
         }
-        else if (rowResult.length >= 3 && colResult.length >= 3) {
-            newCellStatus = CELL_STATUS.WRAP;
-        }
-        else if (rowResult.length >= 4) {
-            newCellStatus = CELL_STATUS.LINE;
-        }
-        else if (colResult.length >= 4) {
-            newCellStatus = CELL_STATUS.COLUMN;
-        }
+
         if (rowResult.length >= 3) {
             result = rowResult;
         }
@@ -111,9 +108,9 @@ export default class GameModel {
     }
 
     printInfo() {
-        for (var i = 1; i <= 9; i++) {
-            var printStr = "";
-            for (var j = 1; j <= 9; j++) {
+        for (let i = 1; i <= 9; i++) {
+            let printStr = "";
+            for (let j = 1; j <= 9; j++) {
                 printStr += this.cells[i][j].type + " ";
             }
             console.log(printStr);
@@ -123,88 +120,87 @@ export default class GameModel {
     getCells() {
         return this.cells;
     }
+
     // controller调用的主要入口
-    // 点击某个格子
+    // 点击某个格子，进行格子的移动等效果
     selectCell(pos) {
-        this.changeModels = [];// 发生改变的model，将作为返回值，给view播动作
+        this.changeModels = [];// 发生改变的model，将作为返回值，给view播动作 [cell, ...]
         this.effectsQueue = []; // 动物消失，爆炸等特效
-        var lastPos = this.lastPos;
-        var delta = Math.abs(pos.x - lastPos.x) + Math.abs(pos.y - lastPos.y);
-        if (delta != 1) { //非相邻格子， 直接返回
+        let lastPos = this.lastPos;
+        let delta = Math.abs(pos.x - lastPos.x) + Math.abs(pos.y - lastPos.y);
+        
+        if (delta != 1) { // 非相邻格子，直接返回
             this.lastPos = pos;
             return [[], []];
         }
-        let curClickCell = this.cells[pos.y][pos.x]; //当前点击的格子
-        let lastClickCell = this.cells[lastPos.y][lastPos.x]; // 上一次点击的格式
-        this.exchangeCell(lastPos, pos);
-        var result1 = this.checkPoint(pos.x, pos.y)[0];
-        var result2 = this.checkPoint(lastPos.x, lastPos.y)[0];
+        let curClickCell = this.cells[pos.y][pos.x]; // 获取当前点击的格子
+        let lastClickCell = this.cells[lastPos.y][lastPos.x]; // 上一次点击的格子
+        this.exchangeCell(lastPos, pos);    // 两个格子进行交换
+
+        let result1 = this.checkPoint(pos.x, pos.y)[0];
+        let result2 = this.checkPoint(lastPos.x, lastPos.y)[0];
         this.curTime = 0; // 动画播放的当前时间
         this.pushToChangeModels(curClickCell);
         this.pushToChangeModels(lastClickCell);
-        let isCanBomb = (curClickCell.status != CELL_STATUS.COMMON && // 判断两个是否是特殊的动物
-            lastClickCell.status != CELL_STATUS.COMMON) ||
-            curClickCell.status == CELL_STATUS.BIRD ||
-            lastClickCell.status == CELL_STATUS.BIRD;
-        if (result1.length < 3 && result2.length < 3 && !isCanBomb) {//不会发生消除的情况
-            this.exchangeCell(lastPos, pos);
+
+        let isCanBomb = (curClickCell.status != CELL_STATUS.COMMON && lastClickCell.status != CELL_STATUS.COMMON)
+            || curClickCell.status == CELL_STATUS.BIRD
+            || lastClickCell.status == CELL_STATUS.BIRD;
+
+        if (result1.length < 3 && result2.length < 3 && !isCanBomb) { // 不会发生消除的情况
+            this.exchangeCell(lastPos, pos);    // 恢复原来位置
             curClickCell.moveToAndBack(lastPos);
             lastClickCell.moveToAndBack(pos);
             this.lastPos = cc.v2(-1, -1);
             return [this.changeModels];
-        }
-        else {
+        } else {
             this.lastPos = cc.v2(-1, -1);
             curClickCell.moveTo(lastPos, this.curTime);
             lastClickCell.moveTo(pos, this.curTime);
-            var checkPoint = [pos, lastPos];
+            let checkPoint = [pos, lastPos];
             this.curTime += ANITIME.TOUCH_MOVE;
             this.processCrush(checkPoint);
             return [this.changeModels, this.effectsQueue];
         }
     }
-    // 消除
+
+    // 消除 @params: [当前位置, 来源位置]
     processCrush(checkPoint) {
         let cycleCount = 0;
         while (checkPoint.length > 0) {
-            let bombModels = [];
-            if (cycleCount == 0 && checkPoint.length == 2) { //特殊消除
+            let bombModels = [];    // 特殊元素进行爆炸
+            if (cycleCount == 0 && checkPoint.length == 2) { // 特殊消除
                 let pos1 = checkPoint[0];
                 let pos2 = checkPoint[1];
                 let model1 = this.cells[pos1.y][pos1.x];
                 let model2 = this.cells[pos2.y][pos2.x];
                 if (model1.status == CELL_STATUS.BIRD || model2.status == CELL_STATUS.BIRD) {
-                    let bombModel = null;
                     if (model1.status == CELL_STATUS.BIRD) {
                         model1.type = model2.type;
                         bombModels.push(model1);
-                    }
-                    else {
+                    } else {
                         model2.type = model1.type;
                         bombModels.push(model2);
                     }
-
                 }
             }
-            for (var i in checkPoint) {
-                var pos = checkPoint[i];
-                if (!this.cells[pos.y][pos.x]) {
-                    continue;
-                }
-                var [result, newCellStatus, newCellType] = this.checkPoint(pos.x, pos.y);
 
-                if (result.length < 3) {
-                    continue;
-                }
-                for (var j in result) {
-                    var model = this.cells[result[j].y][result[j].x];
+            for (let i in checkPoint) {
+                let pos = checkPoint[i];
+                if (!this.cells[pos.y][pos.x]) continue;
+                
+                let [result, newCellStatus, newCellType] = this.checkPoint(pos.x, pos.y);
+
+                if (result.length < 3) continue;
+                
+                for (let j in result) {
+                    let model = this.cells[result[j].y][result[j].x];
                     this.crushCell(result[j].x, result[j].y, false, cycleCount);
                     if (model.status != CELL_STATUS.COMMON) {
                         bombModels.push(model);
                     }
                 }
                 this.createNewCell(pos, newCellStatus, newCellType);
-
             }
             this.processBomb(bombModels, cycleCount);
             this.curTime += ANITIME.DIE;
@@ -231,14 +227,15 @@ export default class GameModel {
         model.setVisible(this.curTime, true);
         this.changeModels.push(model);
     }
+
     // 下落
     down() {
         let newCheckPoint = [];
-        for (var i = 1; i <= GRID_WIDTH; i++) {
-            for (var j = 1; j <= GRID_HEIGHT; j++) {
+        for (let i = 1; i <= GRID_WIDTH; i++) {
+            for (let j = 1; j <= GRID_HEIGHT; j++) {
                 if (this.cells[i][j] == null) {
-                    var curRow = i;
-                    for (var k = curRow; k <= GRID_HEIGHT; k++) {
+                    let curRow = i;
+                    for (let k = curRow; k <= GRID_HEIGHT; k++) {
                         if (this.cells[k][j]) {
                             this.pushToChangeModels(this.cells[k][j]);
                             newCheckPoint.push(this.cells[k][j]);
@@ -249,8 +246,8 @@ export default class GameModel {
                             curRow++;
                         }
                     }
-                    var count = 1;
-                    for (var k = curRow; k <= GRID_HEIGHT; k++) {
+                    let count = 1;
+                    for (let k = curRow; k <= GRID_HEIGHT; k++) {
                         this.cells[k][j] = new CellModel();
                         this.cells[k][j].init(this.getRandomCellType());
                         this.cells[k][j].setStartXY(j, count + GRID_HEIGHT);
@@ -276,8 +273,8 @@ export default class GameModel {
     }
 
     cleanCmd() {
-        for (var i = 1; i <= GRID_WIDTH; i++) {
-            for (var j = 1; j <= GRID_HEIGHT; j++) {
+        for (let i = 1; i <= GRID_WIDTH; i++) {
+            for (let j = 1; j <= GRID_HEIGHT; j++) {
                 if (this.cells[i][j]) {
                     this.cells[i][j].cmd = [];
                 }
@@ -286,14 +283,9 @@ export default class GameModel {
     }
 
     exchangeCell(pos1, pos2) {
-        var tmpModel = this.cells[pos1.y][pos1.x];
-        this.cells[pos1.y][pos1.x] = this.cells[pos2.y][pos2.x];
-        this.cells[pos1.y][pos1.x].x = pos1.x;
-        this.cells[pos1.y][pos1.x].y = pos1.y;
-        this.cells[pos2.y][pos2.x] = tmpModel;
-        this.cells[pos2.y][pos2.x].x = pos2.x;
-        this.cells[pos2.y][pos2.x].y = pos2.y;
+        [this.cells[pos1.y][pos1.x], this.cells[pos2.y][pos2.x]] = [this.cells[pos2.y][pos2.x], this.cells[pos1.y][pos1.x]];
     }
+
     // 设置种类
     // Todo 改成乱序算法
     setCellTypeNum(num) {
@@ -309,73 +301,81 @@ export default class GameModel {
             createTypeList[i], createTypeList[index] = createTypeList[index], createTypeList[i]
         }
     }
+
     // 随要生成一个类型
     getRandomCellType() {
-        var index = Math.floor(Math.random() * this.cellTypeNum);
+        let index = Math.floor(Math.random() * this.cellTypeNum);
         return this.cellCreateType[index];
     }
+
     // TODO bombModels去重
     processBomb(bombModels, cycleCount) {
         while (bombModels.length > 0) {
             let newBombModel = [];
             let bombTime = ANITIME.BOMB_DELAY;
             bombModels.forEach(function (model) {
-                if (model.status == CELL_STATUS.LINE) {
-                    for (let i = 1; i <= GRID_WIDTH; i++) {
-                        if (this.cells[model.y][i]) {
-                            if (this.cells[model.y][i].status != CELL_STATUS.COMMON) {
-                                newBombModel.push(this.cells[model.y][i]);
-                            }
-                            this.crushCell(i, model.y, false, cycleCount);
-                        }
-                    }
-                    this.addRowBomb(this.curTime, cc.v2(model.x, model.y));
-                }
-                else if (model.status == CELL_STATUS.COLUMN) {
-                    for (let i = 1; i <= GRID_HEIGHT; i++) {
-                        if (this.cells[i][model.x]) {
-                            if (this.cells[i][model.x].status != CELL_STATUS.COMMON) {
-                                newBombModel.push(this.cells[i][model.x]);
-                            }
-                            this.crushCell(model.x, i, false, cycleCount);
-                        }
-                    }
-                    this.addColBomb(this.curTime, cc.v2(model.x, model.y));
-                }
-                else if (model.status == CELL_STATUS.WRAP) {
-                    let x = model.x;
-                    let y = model.y;
-                    for (let i = 1; i <= GRID_HEIGHT; i++) {
-                        for (let j = 1; j <= GRID_WIDTH; j++) {
-                            let delta = Math.abs(x - j) + Math.abs(y - i);
-                            if (this.cells[i][j] && delta <= 2) {
-                                if (this.cells[i][j].status != CELL_STATUS.COMMON) {
-                                    newBombModel.push(this.cells[i][j]);
+                switch(model.status) {
+                    case CELL_STATUS.LINE: {
+                        for (let i = 1; i <= GRID_WIDTH; i++) {
+                            if (this.cells[model.y][i]) {
+                                if (this.cells[model.y][i].status != CELL_STATUS.COMMON) {
+                                    newBombModel.push(this.cells[model.y][i]);
                                 }
-                                this.crushCell(j, i, false, cycleCount);
+                                this.crushCell(i, model.y, false, cycleCount);
                             }
                         }
+                        this.addRowBomb(this.curTime, cc.v2(model.x, model.y));
+                        break
                     }
-                }
-                else if (model.status == CELL_STATUS.BIRD) {
-                    let crushType = model.type
-                    if (bombTime < ANITIME.BOMB_BIRD_DELAY) {
-                        bombTime = ANITIME.BOMB_BIRD_DELAY;
-                    }
-                    if (crushType == CELL_TYPE.BIRD) {
-                        crushType = this.getRandomCellType();
-                    }
-                    for (let i = 1; i <= GRID_HEIGHT; i++) {
-                        for (let j = 1; j <= GRID_WIDTH; j++) {
-                            if (this.cells[i][j] && this.cells[i][j].type == crushType) {
-                                if (this.cells[i][j].status != CELL_STATUS.COMMON) {
-                                    newBombModel.push(this.cells[i][j]);
+                    case CELL_STATUS.COLUMN: {
+                        for (let i = 1; i <= GRID_HEIGHT; i++) {
+                            if (this.cells[i][model.x]) {
+                                if (this.cells[i][model.x].status != CELL_STATUS.COMMON) {
+                                    newBombModel.push(this.cells[i][model.x]);
                                 }
-                                this.crushCell(j, i, true, cycleCount);
+                                this.crushCell(model.x, i, false, cycleCount);
                             }
                         }
+                        this.addColBomb(this.curTime, cc.v2(model.x, model.y));
+                        break
                     }
-                    //this.crushCell(model.x, model.y);
+                    case CELL_STATUS.WRAP: {
+                        let x = model.x;
+                        let y = model.y;
+                        for (let i = 1; i <= GRID_HEIGHT; i++) {
+                            for (let j = 1; j <= GRID_WIDTH; j++) {
+                                let delta = Math.abs(x - j) + Math.abs(y - i);
+                                if (this.cells[i][j] && delta <= 2) {
+                                    if (this.cells[i][j].status != CELL_STATUS.COMMON) {
+                                        newBombModel.push(this.cells[i][j]);
+                                    }
+                                    this.crushCell(j, i, false, cycleCount);
+                                }
+                            }
+                        }
+                        break
+                    }
+                    case CELL_STATUS.BIRD: {
+                        let crushType = model.type
+                        if (bombTime < ANITIME.BOMB_BIRD_DELAY) {
+                            bombTime = ANITIME.BOMB_BIRD_DELAY;
+                        }
+                        if (crushType == CELL_TYPE.BIRD) {
+                            crushType = this.getRandomCellType();
+                        }
+                        for (let i = 1; i <= GRID_HEIGHT; i++) {
+                            for (let j = 1; j <= GRID_WIDTH; j++) {
+                                if (this.cells[i][j] && this.cells[i][j].type == crushType) {
+                                    if (this.cells[i][j].status != CELL_STATUS.COMMON) {
+                                        newBombModel.push(this.cells[i][j]);
+                                    }
+                                    this.crushCell(j, i, true, cycleCount);
+                                }
+                            }
+                        }
+                        break
+                    }
+                    default: break
                 }
             }, this);
             if (bombModels.length > 0) {

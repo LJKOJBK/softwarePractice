@@ -61,43 +61,30 @@ cc.Class({
     },
     setListener: function () {
         // 添加点击事件
-        this.node.on(cc.Node.EventType.TOUCH_START, function (eventTouch) {
+        this.node.on(cc.Node.EventType.TOUCH_START, function (e) {
             if (this.isInPlayAni) {//播放动画中，不允许点击
                 return true;
             }
-            // 获取点击位置，通过点击位置推出点击元素
-            var touchPos = eventTouch.getLocation();
-            var cellPos = this.convertTouchPosToCell(touchPos);
-            if (cellPos) {
-                var changeModels = this.selectCell(cellPos);
-                this.isCanMove = changeModels.length < 3;
-            }
-            else {
-                this.isCanMove = false;
-            }
+            // 获取点击位置，通过点击位置推出点击元素坐标
+            let cellPos = this.convertTouchPosToCell(e.getLocation());
+            cellPos && this.selectCell(cellPos);
+            // 点击处有实际格子则可以移动
+            this.isCanMove = !!cellPos
             return true;
         }, this);
         // 滑动操作逻辑
-        this.node.on(cc.Node.EventType.TOUCH_MOVE, function (eventTouch) {
+        this.node.on(cc.Node.EventType.TOUCH_MOVE, function (e) {
             if (this.isCanMove) {
-                var startTouchPos = eventTouch.getStartLocation();
-                var startCellPos = this.convertTouchPosToCell(startTouchPos);
-                var touchPos = eventTouch.getLocation();
-                var cellPos = this.convertTouchPosToCell(touchPos);
+                let startCellPos = this.convertTouchPosToCell(e.getStartLocation());
+                let cellPos = this.convertTouchPosToCell(e.getLocation());
                 if (startCellPos.x != cellPos.x || startCellPos.y != cellPos.y) {
                     this.isCanMove = false;
-                    var changeModels = this.selectCell(cellPos);
+                    this.selectCell(cellPos);
                 }
             }
         }, this);
-        this.node.on(cc.Node.EventType.TOUCH_END, function (eventTouch) {
-            // console.log("1111");
-        }, this);
-        this.node.on(cc.Node.EventType.TOUCH_CANCEL, function (eventTouch) {
-            // console.log("1111");
-        }, this);
     },
-    // 根据点击的像素位置，转换成网格中的位置
+    // 根据点击的像素位置，转换成网格中的位置(数学中的二维坐标轴)
     convertTouchPosToCell: function (pos) {
         pos = this.node.convertToNodeSpace(pos);
         if (pos.x < 0 || pos.x >= GRID_PIXEL_WIDTH || pos.y < 0 || pos.y >= GRID_PIXEL_HEIGHT) {
