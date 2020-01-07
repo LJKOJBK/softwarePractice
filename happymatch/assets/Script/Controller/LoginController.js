@@ -9,6 +9,7 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
 import AudioUtils from "../Utils/AudioUtils";
+let global = require('../Global.js');
 
 cc.Class({
     extends: cc.Component,
@@ -33,9 +34,17 @@ cc.Class({
             type: cc.ProgressBar,
             default: null,
         },
-        loginButton: {
+        // loginButton: {
+        //     type: cc.Button,
+        //     default: null,
+        // },
+        loginBtn1: {
             type: cc.Button,
-            default: null,
+            default: null
+        },
+        loginBtn2: {
+            type: cc.Button,
+            default: null
         },
         worldSceneBGM:{
             type: cc.AudioClip,
@@ -54,9 +63,11 @@ cc.Class({
     },
 
     // 游戏全局入口，点击登录按钮调用
-    onLogin: function(){
+    // 状态0表示休闲模式，1表示计时模式
+    onLogin: function(e, type){
         this.loadingBar.node.active = true;
-        this.loginButton.node.active = false;
+        this.loginBtn1.node.active = this.loginBtn2.node.active = false
+        global.type = type
         this.loadingBar.progress = 0;
         let backup = cc.loader.onProgress;
         cc.loader.onProgress = function (count, amount) {
@@ -67,7 +78,7 @@ cc.Class({
         cc.director.preloadScene("Game", function () {
             cc.loader.onProgress = backup;
             this.loadingBar.node.active = false;
-            this.loginButton.node.active = true;
+            this.loginBtn1.node.active = this.loginBtn2.node.active = true
             cc.director.loadScene("Game");
         }.bind(this));
     },

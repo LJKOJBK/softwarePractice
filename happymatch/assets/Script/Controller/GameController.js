@@ -1,4 +1,5 @@
 import GameModel from "../Model/GameModel";
+let global = require('../Global.js');
 
 cc.Class({
     extends: cc.Component,
@@ -22,6 +23,7 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
+        console.log('type', global.type)
         this.gameModel = new GameModel();
         this.gameModel.init(4);
         var gridScript = this.grid.getComponent("GridView");

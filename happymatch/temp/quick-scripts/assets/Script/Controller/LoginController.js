@@ -10,6 +10,16 @@ var _AudioUtils2 = _interopRequireDefault(_AudioUtils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var global = require('../Global.js'); // Learn cc.Class:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
+// Learn Attribute:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/reference/attributes.html
+// Learn life-cycle callbacks:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
+
 cc.Class({
     extends: cc.Component,
 
@@ -33,7 +43,15 @@ cc.Class({
             type: cc.ProgressBar,
             default: null
         },
-        loginButton: {
+        // loginButton: {
+        //     type: cc.Button,
+        //     default: null,
+        // },
+        loginBtn1: {
+            type: cc.Button,
+            default: null
+        },
+        loginBtn2: {
             type: cc.Button,
             default: null
         },
@@ -52,9 +70,11 @@ cc.Class({
 
 
     // 游戏全局入口，点击登录按钮调用
-    onLogin: function onLogin() {
+    // 状态0表示休闲模式，1表示计时模式
+    onLogin: function onLogin(e, type) {
         this.loadingBar.node.active = true;
-        this.loginButton.node.active = false;
+        this.loginBtn1.node.active = this.loginBtn2.node.active = false;
+        global.type = type;
         this.loadingBar.progress = 0;
         var backup = cc.loader.onProgress;
         cc.loader.onProgress = function (count, amount) {
@@ -65,7 +85,7 @@ cc.Class({
         cc.director.preloadScene("Game", function () {
             cc.loader.onProgress = backup;
             this.loadingBar.node.active = false;
-            this.loginButton.node.active = true;
+            this.loginBtn1.node.active = this.loginBtn2.node.active = true;
             cc.director.loadScene("Game");
         }.bind(this));
     },
@@ -75,15 +95,7 @@ cc.Class({
     }
 
     // update (dt) {},
-}); // Learn cc.Class:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
-// Learn Attribute:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
+});
 
 cc._RF.pop();
         }

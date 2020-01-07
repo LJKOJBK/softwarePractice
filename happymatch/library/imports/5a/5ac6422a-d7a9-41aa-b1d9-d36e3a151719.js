@@ -2,13 +2,15 @@
 cc._RF.push(module, '5ac64Iq16lBqrHZ0246FRcZ', 'GameController');
 // Script/Controller/GameController.js
 
-"use strict";
+'use strict';
 
-var _GameModel = require("../Model/GameModel");
+var _GameModel = require('../Model/GameModel');
 
 var _GameModel2 = _interopRequireDefault(_GameModel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var global = require('../Global.js');
 
 cc.Class({
     extends: cc.Component,
@@ -32,6 +34,7 @@ cc.Class({
 
     // use this for initialization
     onLoad: function onLoad() {
+        console.log('type', global.type);
         this.gameModel = new _GameModel2.default();
         this.gameModel.init(4);
         var gridScript = this.grid.getComponent("GridView");

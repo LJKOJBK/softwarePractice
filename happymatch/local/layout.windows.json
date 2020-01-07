@@ -5,17 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-<<<<<<< HEAD
-      "x": -8,
-      "y": -8,
-      "width": 1552,
-      "height": 880,
-=======
-      "x": -1286,
-      "y": -188,
-      "width": 1292,
-      "height": 733,
->>>>>>> b885902c0b989a273978a949c30ed738e4ca1b4c
+      "x": 128,
+      "y": 0,
+      "width": 1280,
+      "height": 872,
       "layout": {
         "children": [
           {
@@ -25,58 +18,35 @@
                 "children": [
                   "hierarchy"
                 ],
-<<<<<<< HEAD
-                "height": 379.8000183105469,
+                "height": 375.6000061035156,
                 "type": "panel",
-                "width": 308.3999938964844
-=======
-                "height": 309,
-                "type": "panel",
-                "width": 256
->>>>>>> b885902c0b989a273978a949c30ed738e4ca1b4c
+                "width": 204.0625
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-<<<<<<< HEAD
-                "height": 379.8000183105469,
+                "height": 377.6000061035156,
                 "type": "panel",
-                "width": 308.3999938964844
+                "width": 204.0625
               }
             ],
-            "height": 761.6000366210938,
+            "height": 755.2000122070312,
             "type": "dock-v",
-            "width": 308.3999938964844
-=======
-                "height": 307,
-                "type": "panel",
-                "width": 256
-              }
-            ],
-            "height": 618,
-            "type": "dock-v",
-            "width": 256
->>>>>>> b885902c0b989a273978a949c30ed738e4ca1b4c
+            "width": 204.0625
           },
           {
             "children": [
               {
-                "active": 1,
+                "active": 0,
                 "children": [
-                  "node-library",
-                  "scene"
+                  "scene",
+                  "node-library"
                 ],
-<<<<<<< HEAD
-                "height": 431.3374938964844,
+                "height": 486.7749938964844,
                 "type": "panel",
-                "width": 839.1000366210938
-=======
-                "height": 350,
-                "type": "panel",
-                "width": 704.9948120117188
->>>>>>> b885902c0b989a273978a949c30ed738e4ca1b4c
+                "width": 754.2374877929688
               },
               {
                 "active": 0,
@@ -84,25 +54,14 @@
                   "console",
                   "timeline"
                 ],
-<<<<<<< HEAD
-                "height": 328.26251220703125,
+                "height": 266.4250183105469,
                 "type": "panel",
-                "width": 839.1000366210938
+                "width": 754.2374877929688
               }
             ],
-            "height": 761.6000366210938,
+            "height": 755.2000122070312,
             "type": "dock-v",
-            "width": 839.1000366210938
-=======
-                "height": 266,
-                "type": "panel",
-                "width": 704.9948120117188
-              }
-            ],
-            "height": 618,
-            "type": "dock-v",
-            "width": 704.9948120117188
->>>>>>> b885902c0b989a273978a949c30ed738e4ca1b4c
+            "width": 754.2374877929688
           },
           {
             "active": 0,
@@ -110,15 +69,9 @@
               "inspector",
               "cocos-services"
             ],
-<<<<<<< HEAD
-            "height": 761.6000366210938,
+            "height": 755.2000122070312,
             "type": "panel",
-            "width": 384.5
-=======
-            "height": 618,
-            "type": "panel",
-            "width": 315
->>>>>>> b885902c0b989a273978a949c30ed738e4ca1b4c
+            "width": 304.0874938964844
           }
         ],
         "type": "dock-h"
@@ -135,30 +88,5 @@
       ]
     }
   },
-  "panels": {
-    "package-asset.import": {
-      "x": 340,
-      "y": 72,
-      "width": 472,
-      "height": 576
-    },
-    "package-asset.export": {
-      "x": 498,
-      "y": 96,
-      "width": 421,
-      "height": 546
-    },
-    "builder": {
-      "x": 472,
-      "y": 36,
-      "width": 679,
-      "height": 724
-    },
-    "preferences": {
-      "x": 562,
-      "y": 163,
-      "width": 601,
-      "height": 565
-    }
-  }
+  "panels": {}
 }

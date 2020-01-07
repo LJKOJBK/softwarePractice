@@ -1,0 +1,1 @@
+{"version":3,"sources":["..\\..\\..\\..\\assets\\Script/assets\\Script\\Global.js"],"names":["module","exports","type"],"mappings":";;;;;;AAAAA,OAAOC,OAAP,GAAiB;AACbC,UAAM;AADO,CAAjB","file":"Global.js","sourceRoot":"..\\..\\..\\..\\assets\\Script","sourcesContent":["module.exports = {\r\n    type: 0\r\n}"]}
