@@ -18,12 +18,21 @@ cc.Class({
         grid:{
             default: null,
             type: cc.Node
+        },
+        timeLabel: {
+            default: null,
+            type: cc.Label
+        },
+        mask: {
+            default: null,
+            type: cc.Node
         }
     },
 
     // use this for initialization
     onLoad: function () {
-        console.log('type', global.type)
+        this.gameover = false
+        this.handleTimingModel()  // 处理与计时模式有关的模式
         this.gameModel = new GameModel();
         this.gameModel.init(4);
         var gridScript = this.grid.getComponent("GridView");
@@ -34,12 +43,28 @@ cc.Class({
     selectCell: function(pos){
         return this.gameModel.selectCell(pos);
     },
+
     cleanCmd: function(){
         this.gameModel.cleanCmd();
-    }
+    },
+
+    handleTimingModel: function() {
+        this.isTimingModel = (global.type == 1)
+        if(!this.isTimingModel) return 
+        
+        this.timeLast = 60
+        this.timeLabel.node.active = true
+    },
 
     // called every frame, uncomment this function to activate update callback
-    // update: function (dt) {
-
-    // }, 
+    update: function (dt) {
+        if(this.isTimingModel && !this.gameover) {
+            this.timeLast -= dt
+            this.timeLabel.string = Math.ceil(this.timeLast)
+            if(this.timeLast <= 0) {
+                this.gameover = true
+                this.mask.active = true
+            }
+        }
+    }, 
 });

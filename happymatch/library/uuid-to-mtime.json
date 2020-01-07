@@ -560,8 +560,8 @@
     "relativePath": "Prefabs\\Frog.prefab"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1578363328751,
-    "meta": 1578364027364,
+    "asset": 1578368399264,
+    "meta": 1578368399327,
     "relativePath": "Scene\\Game.fire"
   },
   "91a25021-24f8-4f1e-afa7-b2a98fa7d144": {
@@ -570,8 +570,8 @@
     "relativePath": "Prefabs\\Horse.prefab"
   },
   "09dc4332-638e-4828-b232-b4d2a0363ad2": {
-    "asset": 1578365960625,
-    "meta": 1578365960770,
+    "asset": 1578368394550,
+    "meta": 1578368394618,
     "relativePath": "Scene\\Login.fire"
   },
   "dae88182-7af0-4c68-aee5-42a86e99ef06": {
@@ -999,19 +999,19 @@
     "meta": 1578364033811,
     "relativePath": "Music\\worldscenebgm.mp3"
   },
-  "5ac6422a-d7a9-41aa-b1d9-d36e3a151719": {
-    "asset": 1578365689571,
-    "meta": 1578365694124,
-    "relativePath": "Script\\Controller\\GameController.js"
-  },
-  "b2480ea6-5276-4045-ab3c-92a88e339041": {
-    "asset": 1578365519966,
-    "meta": 1578365694180,
-    "relativePath": "Script\\Global.js"
-  },
   "5f484e41-bace-4042-865a-90aeca01786d": {
     "asset": 1578365752700,
     "meta": 1578365757648,
     "relativePath": "Script\\Controller\\LoginController.js"
+  },
+  "b2480ea6-5276-4045-ab3c-92a88e339041": {
+    "asset": 1578368296649,
+    "meta": 1578368298666,
+    "relativePath": "Script\\Global.js"
+  },
+  "5ac6422a-d7a9-41aa-b1d9-d36e3a151719": {
+    "asset": 1578368388746,
+    "meta": 1578368393239,
+    "relativePath": "Script\\Controller\\GameController.js"
   }
 }
