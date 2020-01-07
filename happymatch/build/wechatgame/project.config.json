@@ -9,7 +9,7 @@
 	},
 	"compileType": "game",
 	"libVersion": "game",
-	"appid": "wx329c3fb8ce2a1c19",
+	"appid": "wx6ac3f5090a6b99c5",
 	"projectname": "crush",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
@@ -31,5 +31,6 @@
 			"current": -1,
 			"list": []
 		}
-	}
+	},
+	"isGameTourist": true
 }
