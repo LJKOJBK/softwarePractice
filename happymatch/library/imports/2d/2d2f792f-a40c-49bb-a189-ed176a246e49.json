@@ -21,7 +21,7 @@
         "__id__": 33
       }
     ],
-    "_active": true,
+    "_active": false,
     "_level": 0,
     "_components": [],
     "_prefab": null,
@@ -45,8 +45,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.35628302668181944,
-      "y": 0.35628302668181944,
+      "x": 0.4460297244994128,
+      "y": 0.4460297244994128,
       "z": 1
     },
     "_quat": {
@@ -85,7 +85,7 @@
       }
     ],
     "_active": true,
-    "_level": 0,
+    "_level": 1,
     "_components": [
       {
         "__id__": 32
@@ -1423,7 +1423,7 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 0,
+    "_level": 1,
     "_components": [
       {
         "__id__": 34

@@ -92,9 +92,7 @@ cc.Class({
             }
             curTime = cmd[i].playTime + cmd[i].keepTime;
         }
-        /**
-         * 智障的引擎设计，一群SB
-         */
+
         if (actionArray.length == 1) {
             this.node.runAction(actionArray[0]);
         } else {
