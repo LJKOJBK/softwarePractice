@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.35628302668181944,
-      "y": 0.35628302668181944,
+      "x": 0.3041263365409744,
+      "y": 0.3041263365409744,
       "z": 1
     },
     "_quat": {
@@ -288,7 +288,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "ba4fe4db-3134-4dcb-9434-892412c2d2b2"
+      "__uuid__": "eaa3188f-825b-4101-9ed2-94ec5ef099d8"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -489,7 +489,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 240,
+      "width": 96.75,
       "height": 30
     },
     "_anchorPoint": {
@@ -532,8 +532,8 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_string": "超蠢的进度条设计",
-    "_N$string": "超蠢的进度条设计",
+    "_string": "loading",
+    "_N$string": "loading",
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,

@@ -18,23 +18,23 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 379.5874938964844,
+                "height": 379.0874938964844,
                 "type": "panel",
-                "width": 248.02500915527344
+                "width": 248.0625
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 381.6125183105469,
+                "height": 382.1000061035156,
                 "type": "panel",
-                "width": 248.02500915527344
+                "width": 248.0625
               }
             ],
             "height": 763.2000122070312,
             "type": "dock-v",
-            "width": 248.02500915527344
+            "width": 248.0625
           },
           {
             "children": [
@@ -44,9 +44,9 @@
                   "node-library",
                   "scene"
                 ],
-                "height": 491.95001220703125,
+                "height": 491.4875183105469,
                 "type": "panel",
-                "width": 916.7374877929688
+                "width": 916.2374877929688
               },
               {
                 "active": 0,
@@ -54,14 +54,14 @@
                   "console",
                   "timeline"
                 ],
-                "height": 269.25,
+                "height": 269.7124938964844,
                 "type": "panel",
-                "width": 916.7374877929688
+                "width": 916.2374877929688
               }
             ],
             "height": 763.2000122070312,
             "type": "dock-v",
-            "width": 916.7374877929688
+            "width": 916.2374877929688
           },
           {
             "active": 0,
@@ -71,7 +71,7 @@
             ],
             "height": 763.2000122070312,
             "type": "panel",
-            "width": 369.6125183105469
+            "width": 370.0874938964844
           }
         ],
         "type": "dock-h"
